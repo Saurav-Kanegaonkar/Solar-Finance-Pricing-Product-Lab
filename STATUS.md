@@ -1,7 +1,6 @@
 # Status
 
-- Project: Solar Finance Pricing Product Lab
-- GitHub: https://github.com/Saurav-Kanegaonkar/Solar-Finance-Pricing-Product-Lab
-- Status: complete
-- Resume Link Ready: Yes
-- Last update: Created to locked pipeline standards with multiple data sources, analysis artifacts, scripts, screenshot, and distinct artifact framing.
+- Status: upgraded through the Portfolio Artifact Upgrade Workflow.
+- Artifact type: residential solar finance pricing and product workbench.
+- Data: deterministic synthetic scenario model with documented assumptions.
+- Verification: regenerate data with `npm run analyze`, serve with `npm start`, and inspect the three README screenshots.

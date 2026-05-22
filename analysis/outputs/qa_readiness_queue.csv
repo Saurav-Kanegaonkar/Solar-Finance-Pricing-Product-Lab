@@ -1,0 +1,19 @@
+scenario_id,state,channel,test_area,severity,open_defects,data_quality_score,owner
+SCN-009,CA,Dealer partner,Funding milestone,Medium,7,62.867,Product
+SCN-014,CA,Installer platform,Dealer proposal sync,Medium,7,62.887,Pricing
+SCN-035,AZ,New homes,Credit prequal,Medium,7,59.728,Product
+SCN-037,AZ,Dealer partner,Rate card import,Medium,7,63.585,Product
+SCN-056,TX,Direct homeowner,Rate card import,Medium,7,62.639,Operations
+SCN-063,FL,New homes,Funding milestone,Medium,7,61.46,Pricing
+SCN-089,NJ,Dealer partner,Credit prequal,Medium,7,65.854,Operations
+SCN-095,NJ,New homes,Dealer proposal sync,Medium,7,60.27,Pricing
+SCN-121,CO,Dealer partner,Credit prequal,Medium,7,65.721,Product
+SCN-124,CO,Direct homeowner,Credit prequal,Medium,7,65.509,Operations
+SCN-144,NV,Direct homeowner,Credit prequal,Medium,7,63.152,Analytics
+SCN-002,CA,Installer platform,Rate card import,Medium,6,70.138,Pricing
+SCN-011,CA,New homes,Dealer proposal sync,Medium,6,67.161,Operations
+SCN-027,AZ,New homes,Credit prequal,Medium,6,69.691,Pricing
+SCN-045,TX,Dealer partner,Rate card import,Medium,6,65.244,Pricing
+SCN-051,TX,New homes,Escalator display,Medium,6,67.564,Pricing
+SCN-054,TX,Installer platform,Credit prequal,Medium,6,65.508,Pricing
+SCN-059,TX,New homes,Credit prequal,Medium,6,69.232,Analytics

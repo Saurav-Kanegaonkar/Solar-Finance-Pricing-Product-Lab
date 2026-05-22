@@ -1,0 +1,19 @@
+action_id,scenario_id,action,owner,meeting,estimated_margin_impact,due_week
+ACT-017,SCN-017,Expand into next operating review,Pricing manager,S&OP,315199.31,2026-06-19
+ACT-102,SCN-102,Raise rate or reduce dealer incentive,Pricing manager,Weekly pricing review,183657.41,2026-06-12
+ACT-069,SCN-069,Reprice to defend installer proposal flow,Product lead,Product council,183437.81,2026-06-19
+ACT-025,SCN-025,Raise rate or reduce dealer incentive,Dealer ops,Weekly pricing review,170508.23,2026-06-19
+ACT-052,SCN-052,Expand into next operating review,Analytics,S&OP,169152.71,2026-06-05
+ACT-049,SCN-049,Expand into next operating review,Analytics,Platform QA standup,166735.43,2026-06-12
+ACT-136,SCN-136,Raise rate or reduce dealer incentive,Product lead,S&OP,158042.59,2026-06-19
+ACT-060,SCN-060,Raise rate or reduce dealer incentive,Analytics,Weekly pricing review,156915.34,2026-06-26
+ACT-104,SCN-104,Raise rate or reduce dealer incentive,Product lead,Product council,155604.83,2026-06-05
+ACT-120,SCN-120,Expand into next operating review,Dealer ops,Weekly pricing review,154408.81,2026-06-19
+ACT-134,SCN-134,Raise rate or reduce dealer incentive,Analytics,Product council,153151.15,2026-06-12
+ACT-004,SCN-004,Raise rate or reduce dealer incentive,Product lead,Product council,142023.83,2026-06-19
+ACT-085,SCN-085,Raise rate or reduce dealer incentive,Dealer ops,Weekly pricing review,139627.95,2026-06-05
+ACT-058,SCN-058,Raise rate or reduce dealer incentive,Analytics,Weekly pricing review,138157.03,2026-06-05
+ACT-127,SCN-127,Raise rate or reduce dealer incentive,Analytics,Weekly pricing review,135594.78,2026-06-05
+ACT-156,SCN-156,Raise rate or reduce dealer incentive,Analytics,S&OP,133769.31,2026-06-19
+ACT-079,SCN-079,Raise rate or reduce dealer incentive,Dealer ops,Weekly pricing review,130904.07,2026-06-05
+ACT-009,SCN-009,Reprice to defend installer proposal flow,Analytics,Weekly pricing review,127743.08,2026-06-12

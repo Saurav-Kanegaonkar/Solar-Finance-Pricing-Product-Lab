@@ -1,0 +1,161 @@
+scenario_id,state,channel,product,competitor,competitor_rate_or_price,competitor_dealer_fee_pct,dealer_incentive_pct,proposal_win_risk
+SCN-001,CA,Dealer partner,Solar loan,TPO specialist,0.067,0.111,0.018,High
+SCN-002,CA,Installer platform,Solar loan,National solar lender,0.081,0.119,0.021,Medium
+SCN-003,CA,New homes,Solar loan,National solar lender,0.09,0.115,0.021,Low
+SCN-004,CA,Direct homeowner,Solar loan,TPO specialist,0.101,0.099,0.017,Low
+SCN-005,CA,Dealer partner,Solar plus storage loan,TPO specialist,0.085,0.138,0.019,Low
+SCN-006,CA,Installer platform,Solar plus storage loan,Regional credit union,0.059,0.136,0.025,High
+SCN-007,CA,New homes,Solar plus storage loan,National solar lender,0.074,0.105,0.021,Medium
+SCN-008,CA,Direct homeowner,Solar plus storage loan,National solar lender,0.09,0.11,0.011,Low
+SCN-009,CA,Dealer partner,Operating lease,TPO specialist,0.203,0.058,0.022,High
+SCN-010,CA,Installer platform,Operating lease,TPO specialist,0.208,0.047,0.011,Low
+SCN-011,CA,New homes,Operating lease,National solar lender,0.199,0.104,0.013,Medium
+SCN-012,CA,Direct homeowner,Operating lease,TPO specialist,0.202,0.067,0.008,Medium
+SCN-013,CA,Dealer partner,Levelized PPA,National solar lender,0.252,0.098,0.028,Medium
+SCN-014,CA,Installer platform,Levelized PPA,National solar lender,0.234,0.042,0.024,Medium
+SCN-015,CA,New homes,Levelized PPA,TPO specialist,0.213,0.049,0.019,Medium
+SCN-016,CA,Direct homeowner,Levelized PPA,National solar lender,0.22,0.071,0.026,Medium
+SCN-017,CA,Dealer partner,Prepaid lease,TPO specialist,0.23,0.08,0.023,Medium
+SCN-018,CA,Installer platform,Prepaid lease,Installer captive offer,0.232,0.044,0.02,Low
+SCN-019,CA,New homes,Prepaid lease,National solar lender,0.236,0.064,0.008,Low
+SCN-020,CA,Direct homeowner,Prepaid lease,TPO specialist,0.231,0.03,0.015,Low
+SCN-021,AZ,Dealer partner,Solar loan,TPO specialist,0.092,0.129,0.01,Low
+SCN-022,AZ,Installer platform,Solar loan,TPO specialist,0.073,0.111,0.007,High
+SCN-023,AZ,New homes,Solar loan,National solar lender,0.074,0.131,0.021,High
+SCN-024,AZ,Direct homeowner,Solar loan,National solar lender,0.066,0.077,0.013,High
+SCN-025,AZ,Dealer partner,Solar plus storage loan,TPO specialist,0.085,0.128,0.013,High
+SCN-026,AZ,Installer platform,Solar plus storage loan,TPO specialist,0.079,0.132,0.014,High
+SCN-027,AZ,New homes,Solar plus storage loan,National solar lender,0.084,0.133,0.021,Low
+SCN-028,AZ,Direct homeowner,Solar plus storage loan,National solar lender,0.085,0.129,0.021,High
+SCN-029,AZ,Dealer partner,Operating lease,Regional credit union,0.119,0.081,0.022,High
+SCN-030,AZ,Installer platform,Operating lease,TPO specialist,0.15,0.079,0.015,Low
+SCN-031,AZ,New homes,Operating lease,National solar lender,0.142,0.064,0.013,Low
+SCN-032,AZ,Direct homeowner,Operating lease,Installer captive offer,0.145,0.08,0.022,Medium
+SCN-033,AZ,Dealer partner,Levelized PPA,National solar lender,0.146,0.097,0.019,Medium
+SCN-034,AZ,Installer platform,Levelized PPA,National solar lender,0.15,0.1,0.014,High
+SCN-035,AZ,New homes,Levelized PPA,TPO specialist,0.119,0.096,0.008,Medium
+SCN-036,AZ,Direct homeowner,Levelized PPA,TPO specialist,0.138,0.087,0.019,Low
+SCN-037,AZ,Dealer partner,Prepaid lease,TPO specialist,0.118,0.067,0.011,Medium
+SCN-038,AZ,Installer platform,Prepaid lease,National solar lender,0.117,0.07,0.013,Medium
+SCN-039,AZ,New homes,Prepaid lease,TPO specialist,0.132,0.049,0.007,Medium
+SCN-040,AZ,Direct homeowner,Prepaid lease,Regional credit union,0.136,0.035,0.007,Medium
+SCN-041,TX,Dealer partner,Solar loan,TPO specialist,0.088,0.062,0.025,Low
+SCN-042,TX,Installer platform,Solar loan,TPO specialist,0.072,0.116,0.013,High
+SCN-043,TX,New homes,Solar loan,National solar lender,0.083,0.09,0.019,Low
+SCN-044,TX,Direct homeowner,Solar loan,National solar lender,0.072,0.098,0.022,Low
+SCN-045,TX,Dealer partner,Solar plus storage loan,TPO specialist,0.089,0.125,0.017,High
+SCN-046,TX,Installer platform,Solar plus storage loan,TPO specialist,0.078,0.146,0.021,High
+SCN-047,TX,New homes,Solar plus storage loan,TPO specialist,0.074,0.13,0.007,High
+SCN-048,TX,Direct homeowner,Solar plus storage loan,National solar lender,0.064,0.162,0.011,High
+SCN-049,TX,Dealer partner,Operating lease,National solar lender,0.105,0.07,0.021,Low
+SCN-050,TX,Installer platform,Operating lease,National solar lender,0.105,0.074,0.014,Medium
+SCN-051,TX,New homes,Operating lease,National solar lender,0.101,0.053,0.026,High
+SCN-052,TX,Direct homeowner,Operating lease,TPO specialist,0.098,0.082,0.021,Medium
+SCN-053,TX,Dealer partner,Levelized PPA,TPO specialist,0.101,0.089,0.023,Low
+SCN-054,TX,Installer platform,Levelized PPA,TPO specialist,0.108,0.106,0.02,Low
+SCN-055,TX,New homes,Levelized PPA,Regional credit union,0.109,0.109,0.029,Medium
+SCN-056,TX,Direct homeowner,Levelized PPA,TPO specialist,0.115,0.075,0.023,Low
+SCN-057,TX,Dealer partner,Prepaid lease,Regional credit union,0.126,0.071,0.015,Medium
+SCN-058,TX,Installer platform,Prepaid lease,TPO specialist,0.094,0.053,0.025,Low
+SCN-059,TX,New homes,Prepaid lease,National solar lender,0.098,0.045,0.016,Medium
+SCN-060,TX,Direct homeowner,Prepaid lease,TPO specialist,0.114,0.049,0.021,Medium
+SCN-061,FL,Dealer partner,Solar loan,National solar lender,0.07,0.107,0.012,High
+SCN-062,FL,Installer platform,Solar loan,National solar lender,0.066,0.081,0.007,High
+SCN-063,FL,New homes,Solar loan,TPO specialist,0.076,0.124,0.01,Medium
+SCN-064,FL,Direct homeowner,Solar loan,National solar lender,0.078,0.099,0.022,Low
+SCN-065,FL,Dealer partner,Solar plus storage loan,National solar lender,0.066,0.142,0.018,High
+SCN-066,FL,Installer platform,Solar plus storage loan,TPO specialist,0.077,0.137,0.02,High
+SCN-067,FL,New homes,Solar plus storage loan,National solar lender,0.061,0.124,0.027,High
+SCN-068,FL,Direct homeowner,Solar plus storage loan,Regional credit union,0.074,0.128,0.023,High
+SCN-069,FL,Dealer partner,Operating lease,TPO specialist,0.109,0.053,0.024,Medium
+SCN-070,FL,Installer platform,Operating lease,National solar lender,0.118,0.035,0.021,Low
+SCN-071,FL,New homes,Operating lease,Regional credit union,0.123,0.04,0.018,Medium
+SCN-072,FL,Direct homeowner,Operating lease,Regional credit union,0.108,0.05,0.018,Medium
+SCN-073,FL,Dealer partner,Levelized PPA,Regional credit union,0.13,0.085,0.016,Low
+SCN-074,FL,Installer platform,Levelized PPA,National solar lender,0.128,0.066,0.026,Low
+SCN-075,FL,New homes,Levelized PPA,Installer captive offer,0.141,0.079,0.02,Medium
+SCN-076,FL,Direct homeowner,Levelized PPA,TPO specialist,0.128,0.087,0.016,Low
+SCN-077,FL,Dealer partner,Prepaid lease,National solar lender,0.142,0.055,0.012,Low
+SCN-078,FL,Installer platform,Prepaid lease,TPO specialist,0.112,0.032,0.027,Low
+SCN-079,FL,New homes,Prepaid lease,National solar lender,0.142,0.071,0.006,Medium
+SCN-080,FL,Direct homeowner,Prepaid lease,Regional credit union,0.107,0.043,0.018,Low
+SCN-081,NJ,Dealer partner,Solar loan,TPO specialist,0.083,0.129,0.017,Low
+SCN-082,NJ,Installer platform,Solar loan,National solar lender,0.067,0.123,0.024,High
+SCN-083,NJ,New homes,Solar loan,Regional credit union,0.06,0.067,0.017,High
+SCN-084,NJ,Direct homeowner,Solar loan,National solar lender,0.066,0.129,0.015,Medium
+SCN-085,NJ,Dealer partner,Solar plus storage loan,TPO specialist,0.076,0.111,0.018,High
+SCN-086,NJ,Installer platform,Solar plus storage loan,TPO specialist,0.069,0.141,0.015,High
+SCN-087,NJ,New homes,Solar plus storage loan,TPO specialist,0.08,0.108,0.017,High
+SCN-088,NJ,Direct homeowner,Solar plus storage loan,National solar lender,0.062,0.103,0.016,High
+SCN-089,NJ,Dealer partner,Operating lease,National solar lender,0.165,0.051,0.023,Low
+SCN-090,NJ,Installer platform,Operating lease,National solar lender,0.142,0.07,0.022,Low
+SCN-091,NJ,New homes,Operating lease,Regional credit union,0.14,0.063,0.012,Medium
+SCN-092,NJ,Direct homeowner,Operating lease,National solar lender,0.176,0.083,0.017,Low
+SCN-093,NJ,Dealer partner,Levelized PPA,Installer captive offer,0.178,0.076,0.014,High
+SCN-094,NJ,Installer platform,Levelized PPA,TPO specialist,0.154,0.077,0.013,Low
+SCN-095,NJ,New homes,Levelized PPA,National solar lender,0.168,0.105,0.015,Medium
+SCN-096,NJ,Direct homeowner,Levelized PPA,Installer captive offer,0.143,0.088,0.021,Low
+SCN-097,NJ,Dealer partner,Prepaid lease,TPO specialist,0.174,0.044,0.02,Low
+SCN-098,NJ,Installer platform,Prepaid lease,Installer captive offer,0.174,0.044,0.018,Medium
+SCN-099,NJ,New homes,Prepaid lease,Installer captive offer,0.139,0.061,0.013,Low
+SCN-100,NJ,Direct homeowner,Prepaid lease,TPO specialist,0.164,0.032,0.013,Low
+SCN-101,NY,Dealer partner,Solar loan,Regional credit union,0.061,0.111,0.021,High
+SCN-102,NY,Installer platform,Solar loan,Regional credit union,0.078,0.108,0.015,High
+SCN-103,NY,New homes,Solar loan,Installer captive offer,0.072,0.073,0.018,High
+SCN-104,NY,Direct homeowner,Solar loan,TPO specialist,0.093,0.081,0.02,Low
+SCN-105,NY,Dealer partner,Solar plus storage loan,National solar lender,0.067,0.109,0.023,High
+SCN-106,NY,Installer platform,Solar plus storage loan,National solar lender,0.065,0.165,0.017,High
+SCN-107,NY,New homes,Solar plus storage loan,National solar lender,0.073,0.12,0.014,High
+SCN-108,NY,Direct homeowner,Solar plus storage loan,TPO specialist,0.067,0.168,0.024,High
+SCN-109,NY,Dealer partner,Operating lease,Regional credit union,0.165,0.079,0.012,Low
+SCN-110,NY,Installer platform,Operating lease,National solar lender,0.199,0.074,0.028,Low
+SCN-111,NY,New homes,Operating lease,TPO specialist,0.161,0.097,0.03,Medium
+SCN-112,NY,Direct homeowner,Operating lease,National solar lender,0.153,0.045,0.028,Medium
+SCN-113,NY,Dealer partner,Levelized PPA,National solar lender,0.179,0.065,0.022,Low
+SCN-114,NY,Installer platform,Levelized PPA,National solar lender,0.152,0.09,0.027,Low
+SCN-115,NY,New homes,Levelized PPA,Installer captive offer,0.191,0.112,0.008,Medium
+SCN-116,NY,Direct homeowner,Levelized PPA,Installer captive offer,0.179,0.087,0.007,Medium
+SCN-117,NY,Dealer partner,Prepaid lease,Installer captive offer,0.156,0.068,0.03,Low
+SCN-118,NY,Installer platform,Prepaid lease,Regional credit union,0.197,0.082,0.014,Low
+SCN-119,NY,New homes,Prepaid lease,National solar lender,0.19,0.031,0.021,Medium
+SCN-120,NY,Direct homeowner,Prepaid lease,TPO specialist,0.165,0.027,0.019,Medium
+SCN-121,CO,Dealer partner,Solar loan,TPO specialist,0.093,0.124,0.02,High
+SCN-122,CO,Installer platform,Solar loan,National solar lender,0.066,0.106,0.015,High
+SCN-123,CO,New homes,Solar loan,TPO specialist,0.065,0.115,0.012,High
+SCN-124,CO,Direct homeowner,Solar loan,National solar lender,0.058,0.098,0.02,High
+SCN-125,CO,Dealer partner,Solar plus storage loan,National solar lender,0.09,0.105,0.027,High
+SCN-126,CO,Installer platform,Solar plus storage loan,TPO specialist,0.077,0.11,0.014,Medium
+SCN-127,CO,New homes,Solar plus storage loan,National solar lender,0.087,0.09,0.018,High
+SCN-128,CO,Direct homeowner,Solar plus storage loan,National solar lender,0.066,0.092,0.021,High
+SCN-129,CO,Dealer partner,Operating lease,TPO specialist,0.106,0.078,0.011,Low
+SCN-130,CO,Installer platform,Operating lease,National solar lender,0.123,0.08,0.023,Low
+SCN-131,CO,New homes,Operating lease,Regional credit union,0.119,0.049,0.006,Low
+SCN-132,CO,Direct homeowner,Operating lease,TPO specialist,0.101,0.052,0.008,Medium
+SCN-133,CO,Dealer partner,Levelized PPA,Regional credit union,0.132,0.059,0.014,Medium
+SCN-134,CO,Installer platform,Levelized PPA,National solar lender,0.121,0.079,0.015,Medium
+SCN-135,CO,New homes,Levelized PPA,National solar lender,0.129,0.1,0.02,Medium
+SCN-136,CO,Direct homeowner,Levelized PPA,Installer captive offer,0.128,0.121,0.017,Medium
+SCN-137,CO,Dealer partner,Prepaid lease,TPO specialist,0.122,0.028,0.024,Low
+SCN-138,CO,Installer platform,Prepaid lease,Installer captive offer,0.121,0.033,0.019,Low
+SCN-139,CO,New homes,Prepaid lease,Regional credit union,0.103,0.075,0.024,Medium
+SCN-140,CO,Direct homeowner,Prepaid lease,TPO specialist,0.12,0.063,0.02,Medium
+SCN-141,NV,Dealer partner,Solar loan,Regional credit union,0.089,0.091,0.019,Low
+SCN-142,NV,Installer platform,Solar loan,Regional credit union,0.066,0.131,0.013,High
+SCN-143,NV,New homes,Solar loan,Regional credit union,0.073,0.093,0.022,Low
+SCN-144,NV,Direct homeowner,Solar loan,TPO specialist,0.063,0.061,0.029,High
+SCN-145,NV,Dealer partner,Solar plus storage loan,TPO specialist,0.082,0.143,0.024,Medium
+SCN-146,NV,Installer platform,Solar plus storage loan,Regional credit union,0.07,0.127,0.02,High
+SCN-147,NV,New homes,Solar plus storage loan,National solar lender,0.077,0.106,0.022,High
+SCN-148,NV,Direct homeowner,Solar plus storage loan,TPO specialist,0.062,0.152,0.021,High
+SCN-149,NV,Dealer partner,Operating lease,National solar lender,0.127,0.052,0.018,Low
+SCN-150,NV,Installer platform,Operating lease,National solar lender,0.13,0.083,0.017,Medium
+SCN-151,NV,New homes,Operating lease,TPO specialist,0.125,0.085,0.022,Low
+SCN-152,NV,Direct homeowner,Operating lease,Regional credit union,0.124,0.05,0.019,Medium
+SCN-153,NV,Dealer partner,Levelized PPA,TPO specialist,0.131,0.087,0.022,Low
+SCN-154,NV,Installer platform,Levelized PPA,TPO specialist,0.1,0.108,0.013,Low
+SCN-155,NV,New homes,Levelized PPA,National solar lender,0.106,0.053,0.015,Low
+SCN-156,NV,Direct homeowner,Levelized PPA,Regional credit union,0.117,0.109,0.017,Low
+SCN-157,NV,Dealer partner,Prepaid lease,National solar lender,0.103,0.027,0.021,Low
+SCN-158,NV,Installer platform,Prepaid lease,National solar lender,0.112,0.033,0.025,Low
+SCN-159,NV,New homes,Prepaid lease,National solar lender,0.105,0.026,0.015,Medium
+SCN-160,NV,Direct homeowner,Prepaid lease,Regional credit union,0.126,0.007,0.013,Low

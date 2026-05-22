@@ -2,14 +2,15 @@
 
 ## What I analyzed
 
-I joined 5,040 daily metric rows, 760 source events, and 220 action candidates for solar financing pricing and new product analytics.
+I modeled 160 synthetic residential solar finance pricing scenarios across 8 states, 5 product structures, dealer channels, credit bands, competitive offers, and pricing-platform QA checks.
 
 ## Findings
 
-- The highest-priority dealer product scenario is DEA022 with a priority score of 98.39.
-- The top queue combines 49.9 average risk with 81.0 quality score and $858,979 estimated impact.
-- The strongest use case is turning repeated stakeholder questions into a ranked operating digest.
+- The highest-priority rate-card action is SCN-060, a TX Prepaid lease scenario in the Direct homeowner channel.
+- The scenario combines 17.921 bps of competitor gap, -1595.224 bps of margin gap, 4 QA defects, and a 48.764 readiness score.
+- 33 scenarios clear the expansion-readiness threshold while 49 scenarios show high proposal win risk.
+- Product economics are strongest for Operating lease with an average margin of 1025.282 bps.
 
 ## Recommendation
 
-Prioritize the top queue before scaling more dashboards. The project should help leaders decide which dealer product scenario risks need action, validation, or monitoring.
+Use the rate-card queue to separate pricing moves from product-readiness issues. Reprice scenarios with negative margin or high competitor gap, hold launches with severe QA defects, and move ready states into the next operating review.

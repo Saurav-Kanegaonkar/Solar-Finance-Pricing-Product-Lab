@@ -1,0 +1,161 @@
+scenario_id,state,channel,test_area,severity,open_defects,data_quality_score,owner
+SCN-001,CA,Dealer partner,Escalator display,Medium,4,75.415,Product
+SCN-002,CA,Installer platform,Rate card import,Medium,6,70.138,Pricing
+SCN-003,CA,New homes,Rate card import,Medium,4,73.457,Analytics
+SCN-004,CA,Direct homeowner,Rate card import,Medium,4,77.947,Analytics
+SCN-005,CA,Dealer partner,Rate card import,Medium,5,70.4,Product
+SCN-006,CA,Installer platform,Dealer proposal sync,Low,3,78.521,Product
+SCN-007,CA,New homes,Credit prequal,High,8,61.286,Pricing
+SCN-008,CA,Direct homeowner,Dealer proposal sync,Low,2,87.772,Pricing
+SCN-009,CA,Dealer partner,Funding milestone,Medium,7,62.867,Product
+SCN-010,CA,Installer platform,Credit prequal,Medium,4,78.6,Pricing
+SCN-011,CA,New homes,Dealer proposal sync,Medium,6,67.161,Operations
+SCN-012,CA,Direct homeowner,Dealer proposal sync,Medium,4,73.808,Operations
+SCN-013,CA,Dealer partner,Rate card import,Medium,4,74.467,Product
+SCN-014,CA,Installer platform,Dealer proposal sync,Medium,7,62.887,Pricing
+SCN-015,CA,New homes,Rate card import,Low,3,83.205,Product
+SCN-016,CA,Direct homeowner,Rate card import,Low,0,93.429,Product
+SCN-017,CA,Dealer partner,Escalator display,Medium,4,77.203,Pricing
+SCN-018,CA,Installer platform,Escalator display,Low,2,83.875,Product
+SCN-019,CA,New homes,Dealer proposal sync,Low,3,85.098,Product
+SCN-020,CA,Direct homeowner,Credit prequal,Medium,5,70.365,Pricing
+SCN-021,AZ,Dealer partner,Dealer proposal sync,High,9,58,Product
+SCN-022,AZ,Installer platform,Funding milestone,High,8,61.049,Product
+SCN-023,AZ,New homes,Credit prequal,Low,1,92.05,Product
+SCN-024,AZ,Direct homeowner,Rate card import,Medium,4,79.18,Pricing
+SCN-025,AZ,Dealer partner,Rate card import,Medium,4,76.497,Pricing
+SCN-026,AZ,Installer platform,Rate card import,Medium,4,80.399,Pricing
+SCN-027,AZ,New homes,Credit prequal,Medium,6,69.691,Pricing
+SCN-028,AZ,Direct homeowner,Dealer proposal sync,Medium,4,75.788,Analytics
+SCN-029,AZ,Dealer partner,Escalator display,Low,3,80.497,Operations
+SCN-030,AZ,Installer platform,Credit prequal,Low,2,86.931,Analytics
+SCN-031,AZ,New homes,Escalator display,Medium,4,75.358,Operations
+SCN-032,AZ,Direct homeowner,Dealer proposal sync,Low,1,91.967,Operations
+SCN-033,AZ,Dealer partner,Rate card import,Medium,5,69.197,Pricing
+SCN-034,AZ,Installer platform,Dealer proposal sync,Low,3,80.973,Operations
+SCN-035,AZ,New homes,Credit prequal,Medium,7,59.728,Product
+SCN-036,AZ,Direct homeowner,Escalator display,Medium,5,68.978,Pricing
+SCN-037,AZ,Dealer partner,Rate card import,Medium,7,63.585,Product
+SCN-038,AZ,Installer platform,Rate card import,Medium,4,74.879,Pricing
+SCN-039,AZ,New homes,Dealer proposal sync,Medium,5,68.937,Pricing
+SCN-040,AZ,Direct homeowner,Credit prequal,Low,2,83.178,Operations
+SCN-041,TX,Dealer partner,Dealer proposal sync,Medium,5,75.522,Product
+SCN-042,TX,Installer platform,Credit prequal,Low,2,89.79,Analytics
+SCN-043,TX,New homes,Rate card import,Medium,5,71.557,Operations
+SCN-044,TX,Direct homeowner,Rate card import,Low,1,88.524,Pricing
+SCN-045,TX,Dealer partner,Rate card import,Medium,6,65.244,Pricing
+SCN-046,TX,Installer platform,Credit prequal,Low,1,93.083,Operations
+SCN-047,TX,New homes,Escalator display,Medium,5,69.658,Operations
+SCN-048,TX,Direct homeowner,Dealer proposal sync,Medium,4,76.818,Pricing
+SCN-049,TX,Dealer partner,Escalator display,Low,0,93.639,Operations
+SCN-050,TX,Installer platform,Escalator display,Low,1,88.331,Operations
+SCN-051,TX,New homes,Escalator display,Medium,6,67.564,Pricing
+SCN-052,TX,Direct homeowner,Escalator display,Low,0,93.431,Pricing
+SCN-053,TX,Dealer partner,Credit prequal,Medium,5,75.815,Analytics
+SCN-054,TX,Installer platform,Credit prequal,Medium,6,65.508,Pricing
+SCN-055,TX,New homes,Credit prequal,Low,0,92.591,Operations
+SCN-056,TX,Direct homeowner,Rate card import,Medium,7,62.639,Operations
+SCN-057,TX,Dealer partner,Funding milestone,Medium,4,77.07,Pricing
+SCN-058,TX,Installer platform,Dealer proposal sync,Medium,5,70.071,Product
+SCN-059,TX,New homes,Credit prequal,Medium,6,69.232,Analytics
+SCN-060,TX,Direct homeowner,Dealer proposal sync,Medium,4,75.888,Product
+SCN-061,FL,Dealer partner,Dealer proposal sync,Low,3,83.517,Pricing
+SCN-062,FL,Installer platform,Dealer proposal sync,Medium,6,64.941,Operations
+SCN-063,FL,New homes,Funding milestone,Medium,7,61.46,Pricing
+SCN-064,FL,Direct homeowner,Dealer proposal sync,Low,3,80.11,Analytics
+SCN-065,FL,Dealer partner,Dealer proposal sync,High,9,58,Operations
+SCN-066,FL,Installer platform,Credit prequal,Medium,5,74.962,Pricing
+SCN-067,FL,New homes,Dealer proposal sync,Medium,5,72.961,Pricing
+SCN-068,FL,Direct homeowner,Dealer proposal sync,Low,2,82.52,Analytics
+SCN-069,FL,Dealer partner,Dealer proposal sync,Medium,4,73.087,Product
+SCN-070,FL,Installer platform,Dealer proposal sync,Medium,4,79.116,Operations
+SCN-071,FL,New homes,Credit prequal,Low,3,83.753,Pricing
+SCN-072,FL,Direct homeowner,Escalator display,Low,2,84.214,Product
+SCN-073,FL,Dealer partner,Rate card import,Low,3,81.202,Product
+SCN-074,FL,Installer platform,Rate card import,Low,1,88.576,Product
+SCN-075,FL,New homes,Escalator display,Low,3,82.95,Product
+SCN-076,FL,Direct homeowner,Rate card import,Medium,5,70.406,Operations
+SCN-077,FL,Dealer partner,Escalator display,Low,2,82.685,Product
+SCN-078,FL,Installer platform,Dealer proposal sync,Medium,4,73.665,Product
+SCN-079,FL,New homes,Escalator display,High,8,58,Operations
+SCN-080,FL,Direct homeowner,Rate card import,Medium,4,77.001,Product
+SCN-081,NJ,Dealer partner,Rate card import,Low,1,93.2,Pricing
+SCN-082,NJ,Installer platform,Dealer proposal sync,Low,2,87.154,Analytics
+SCN-083,NJ,New homes,Rate card import,Medium,6,69.169,Pricing
+SCN-084,NJ,Direct homeowner,Rate card import,Medium,6,67.0,Product
+SCN-085,NJ,Dealer partner,Credit prequal,Medium,6,70.061,Product
+SCN-086,NJ,Installer platform,Credit prequal,Medium,4,75.278,Operations
+SCN-087,NJ,New homes,Escalator display,High,10,58,Product
+SCN-088,NJ,Direct homeowner,Dealer proposal sync,Medium,5,74.845,Product
+SCN-089,NJ,Dealer partner,Credit prequal,Medium,7,65.854,Operations
+SCN-090,NJ,Installer platform,Rate card import,Medium,4,75.453,Product
+SCN-091,NJ,New homes,Escalator display,Low,1,92.163,Pricing
+SCN-092,NJ,Direct homeowner,Funding milestone,Medium,6,65.795,Pricing
+SCN-093,NJ,Dealer partner,Escalator display,Medium,5,74.503,Operations
+SCN-094,NJ,Installer platform,Credit prequal,Low,0,97.257,Product
+SCN-095,NJ,New homes,Dealer proposal sync,Medium,7,60.27,Pricing
+SCN-096,NJ,Direct homeowner,Escalator display,High,8,61.935,Analytics
+SCN-097,NJ,Dealer partner,Escalator display,Low,2,84.733,Pricing
+SCN-098,NJ,Installer platform,Rate card import,Low,3,83.403,Pricing
+SCN-099,NJ,New homes,Dealer proposal sync,Medium,4,77.373,Operations
+SCN-100,NJ,Direct homeowner,Dealer proposal sync,Low,1,91.619,Product
+SCN-101,NY,Dealer partner,Dealer proposal sync,Low,3,84.877,Product
+SCN-102,NY,Installer platform,Rate card import,Medium,5,69.296,Operations
+SCN-103,NY,New homes,Credit prequal,High,8,60.02,Analytics
+SCN-104,NY,Direct homeowner,Rate card import,Medium,6,68.272,Product
+SCN-105,NY,Dealer partner,Dealer proposal sync,Medium,4,75.015,Pricing
+SCN-106,NY,Installer platform,Escalator display,High,10,58,Pricing
+SCN-107,NY,New homes,Funding milestone,Medium,6,67.793,Operations
+SCN-108,NY,Direct homeowner,Funding milestone,Medium,4,80.199,Operations
+SCN-109,NY,Dealer partner,Rate card import,High,9,58,Pricing
+SCN-110,NY,Installer platform,Funding milestone,Low,3,80.307,Pricing
+SCN-111,NY,New homes,Rate card import,Medium,5,69.417,Pricing
+SCN-112,NY,Direct homeowner,Dealer proposal sync,Low,3,82.95,Analytics
+SCN-113,NY,Dealer partner,Rate card import,Medium,4,78.113,Product
+SCN-114,NY,Installer platform,Credit prequal,Medium,5,75.814,Product
+SCN-115,NY,New homes,Dealer proposal sync,High,8,58,Product
+SCN-116,NY,Direct homeowner,Dealer proposal sync,High,9,58,Product
+SCN-117,NY,Dealer partner,Dealer proposal sync,Medium,4,74.393,Pricing
+SCN-118,NY,Installer platform,Dealer proposal sync,Low,3,78.912,Product
+SCN-119,NY,New homes,Rate card import,Medium,4,73.708,Operations
+SCN-120,NY,Direct homeowner,Rate card import,Medium,6,64.093,Operations
+SCN-121,CO,Dealer partner,Credit prequal,Medium,7,65.721,Product
+SCN-122,CO,Installer platform,Dealer proposal sync,Medium,5,74.416,Pricing
+SCN-123,CO,New homes,Credit prequal,Medium,4,79.585,Operations
+SCN-124,CO,Direct homeowner,Credit prequal,Medium,7,65.509,Operations
+SCN-125,CO,Dealer partner,Rate card import,Medium,6,66.127,Product
+SCN-126,CO,Installer platform,Dealer proposal sync,Low,3,80.207,Operations
+SCN-127,CO,New homes,Credit prequal,Medium,6,64.745,Operations
+SCN-128,CO,Direct homeowner,Rate card import,High,8,58,Operations
+SCN-129,CO,Dealer partner,Dealer proposal sync,Low,2,89.769,Operations
+SCN-130,CO,Installer platform,Escalator display,Low,2,85.533,Analytics
+SCN-131,CO,New homes,Rate card import,Medium,5,71.666,Operations
+SCN-132,CO,Direct homeowner,Rate card import,Low,3,79.765,Operations
+SCN-133,CO,Dealer partner,Credit prequal,Medium,6,66.156,Pricing
+SCN-134,CO,Installer platform,Dealer proposal sync,Low,2,84.621,Analytics
+SCN-135,CO,New homes,Dealer proposal sync,Medium,6,65.971,Pricing
+SCN-136,CO,Direct homeowner,Credit prequal,Medium,5,71.319,Operations
+SCN-137,CO,Dealer partner,Credit prequal,High,8,60.135,Operations
+SCN-138,CO,Installer platform,Funding milestone,Medium,5,71.04,Pricing
+SCN-139,CO,New homes,Credit prequal,Medium,5,68.69,Operations
+SCN-140,CO,Direct homeowner,Rate card import,Low,0,91.576,Pricing
+SCN-141,NV,Dealer partner,Rate card import,Low,1,94.46,Product
+SCN-142,NV,Installer platform,Dealer proposal sync,High,8,62.461,Pricing
+SCN-143,NV,New homes,Rate card import,Medium,5,70.636,Analytics
+SCN-144,NV,Direct homeowner,Credit prequal,Medium,7,63.152,Analytics
+SCN-145,NV,Dealer partner,Escalator display,Medium,6,68.132,Product
+SCN-146,NV,Installer platform,Credit prequal,High,8,60.078,Operations
+SCN-147,NV,New homes,Credit prequal,Medium,5,72.648,Product
+SCN-148,NV,Direct homeowner,Rate card import,Low,3,81.906,Analytics
+SCN-149,NV,Dealer partner,Rate card import,Low,2,86.142,Pricing
+SCN-150,NV,Installer platform,Rate card import,Medium,4,75.327,Operations
+SCN-151,NV,New homes,Credit prequal,Medium,4,75.017,Product
+SCN-152,NV,Direct homeowner,Funding milestone,Medium,5,69.938,Operations
+SCN-153,NV,Dealer partner,Funding milestone,Medium,5,74.288,Operations
+SCN-154,NV,Installer platform,Rate card import,Medium,5,71.431,Analytics
+SCN-155,NV,New homes,Credit prequal,Medium,4,79.752,Pricing
+SCN-156,NV,Direct homeowner,Credit prequal,Low,0,97.602,Analytics
+SCN-157,NV,Dealer partner,Rate card import,Medium,6,68.542,Product
+SCN-158,NV,Installer platform,Funding milestone,Medium,6,69.938,Pricing
+SCN-159,NV,New homes,Dealer proposal sync,Low,1,92.169,Pricing
+SCN-160,NV,Direct homeowner,Dealer proposal sync,Low,2,88.758,Operations

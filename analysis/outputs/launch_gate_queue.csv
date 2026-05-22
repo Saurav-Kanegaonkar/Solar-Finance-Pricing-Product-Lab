@@ -1,0 +1,6 @@
+launch_gate,product,channel,state_focus,avg_readiness,avg_margin_bps,avg_competitor_gap_bps,open_qa_defects,status,blocker,next_step
+New homes operating lease,Operating lease,New homes,"CA, AZ, CO",75.432,1017.396,13.972,34,Ready for operating review,Builder onboarding and Title 24 package readiness,Package rate card and launch notes for approval
+Prepaid lease expansion,Prepaid lease,Direct homeowner,"TX, FL, NV",63.334,187.267,3.234,24,Monitor,"Buyout disclosure, payment display, and savings narrative",Keep in weekly pricing digest
+Levelized PPA refresh,Levelized PPA,Dealer partner,"CA, NJ, NY",56.785,38.986,11.584,37,Needs platform QA,Escalator QA and utility-rate comparison language,Clear defects before dealer enablement
+Storage loan rate-card update,Solar plus storage loan,Installer platform,"CA, AZ, NV",54.672,-26.415,133.133,38,Needs pricing work,Battery attach economics and funding milestone logic,Reprice assumptions before product council
+Core solar loan competitive reset,Solar loan,Dealer partner,All active states,50.552,-164.407,34.423,33,Needs pricing work,Competitor APR gap and dealer incentive pressure,Reprice assumptions before product council

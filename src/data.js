@@ -4,7 +4,7 @@ export const appData = {
     "stateCount": 8,
     "productCount": 5,
     "profitablePct": 53.75,
-    "readyCount": 33,
+    "readyCount": 32,
     "highWinRiskCount": 49,
     "highQaCount": 16,
     "topScenario": {
@@ -48,19 +48,19 @@ export const appData = {
     },
     {
       "product": "Prepaid lease",
-      "avg_irr_pct": 0.091,
-      "avg_npv": 982.55,
-      "avg_margin_bps": 378.46,
+      "avg_irr_pct": 0.083,
+      "avg_npv": 733.6,
+      "avg_margin_bps": 292.734,
       "avg_payment": 0.0,
-      "ready_scenarios": 9
+      "ready_scenarios": 7
     },
     {
       "product": "Levelized PPA",
-      "avg_irr_pct": 0.062,
-      "avg_npv": 4740.25,
-      "avg_margin_bps": 43.168,
-      "avg_payment": 169.72,
-      "ready_scenarios": 1
+      "avg_irr_pct": 0.055,
+      "avg_npv": 3317.32,
+      "avg_margin_bps": -17.678,
+      "avg_payment": 162.7,
+      "ready_scenarios": 2
     },
     {
       "product": "Solar plus storage loan",
@@ -82,50 +82,43 @@ export const appData = {
   "stateSummary": [
     {
       "state": "NY",
-      "avg_readiness": 67.82,
-      "avg_margin_bps": 419.245,
+      "avg_readiness": 68.798,
+      "avg_margin_bps": 470.537,
       "avg_competitor_gap_bps": 54.502,
       "high_priority_count": 12
     },
     {
       "state": "CA",
-      "avg_readiness": 66.886,
-      "avg_margin_bps": 666.28,
+      "avg_readiness": 67.405,
+      "avg_margin_bps": 691.985,
       "avg_competitor_gap_bps": 5.077,
       "high_priority_count": 8
     },
     {
       "state": "NJ",
-      "avg_readiness": 66.101,
-      "avg_margin_bps": 279.205,
+      "avg_readiness": 65.417,
+      "avg_margin_bps": 224.48,
       "avg_competitor_gap_bps": 58.488,
-      "high_priority_count": 13
+      "high_priority_count": 15
     },
     {
       "state": "FL",
-      "avg_readiness": 59.699,
-      "avg_margin_bps": 206.325,
+      "avg_readiness": 58.874,
+      "avg_margin_bps": 134.058,
       "avg_competitor_gap_bps": 64.309,
       "high_priority_count": 14
     },
     {
       "state": "NV",
-      "avg_readiness": 56.953,
-      "avg_margin_bps": 226.357,
+      "avg_readiness": 56.248,
+      "avg_margin_bps": 182.736,
       "avg_competitor_gap_bps": 52.385,
       "high_priority_count": 14
     },
     {
-      "state": "AZ",
-      "avg_readiness": 56.25,
-      "avg_margin_bps": 131.762,
-      "avg_competitor_gap_bps": 37.288,
-      "high_priority_count": 15
-    },
-    {
       "state": "CO",
       "avg_readiness": 55.587,
-      "avg_margin_bps": 7.021,
+      "avg_margin_bps": -26.458,
       "avg_competitor_gap_bps": 53.86,
       "high_priority_count": 17
     },
@@ -135,6 +128,13 @@ export const appData = {
       "avg_margin_bps": 80.221,
       "avg_competitor_gap_bps": 34.929,
       "high_priority_count": 16
+    },
+    {
+      "state": "AZ",
+      "avg_readiness": 54.6,
+      "avg_margin_bps": 24.34,
+      "avg_competitor_gap_bps": 37.288,
+      "high_priority_count": 17
     }
   ],
   "rateCardActions": [
@@ -193,7 +193,36 @@ export const appData = {
       "readiness_score": 43.949,
       "qa_defects": 6,
       "priority_score": 299.091,
-      "customer_savings_year_1": -890.53,
+      "customer_savings_year_1": -742.36,
+      "recommendation": "Raise rate or reduce dealer incentive"
+    },
+    {
+      "scenario_id": "SCN-155",
+      "state": "NV",
+      "channel": "New homes",
+      "product": "Levelized PPA",
+      "product_type": "PPA",
+      "credit_band": "Near prime",
+      "dealer_tier": "Regional",
+      "system_kw": 6.264,
+      "battery_attach": "No",
+      "annual_kwh": 10285,
+      "project_cost": 17999.67,
+      "dealer_fee_pct": 0.059,
+      "funding_cost_pct": 0.066,
+      "loss_reserve_pct": 0.027,
+      "customer_monthly_payment": 98.09,
+      "rate_card": "$0.114/kWh, 0.00% escalator",
+      "npv": -6027.76,
+      "irr_pct": 0.011,
+      "contribution_margin_bps": -640.28,
+      "margin_gap_bps": -1409.989,
+      "competitor_gap_bps": -6.819,
+      "approval_lift_pts": 4.993,
+      "readiness_score": 38.877,
+      "qa_defects": 4,
+      "priority_score": 288.209,
+      "customer_savings_year_1": 365.72,
       "recommendation": "Raise rate or reduce dealer incentive"
     },
     {
@@ -222,7 +251,7 @@ export const appData = {
       "readiness_score": 44.11,
       "qa_defects": 5,
       "priority_score": 284.474,
-      "customer_savings_year_1": -746.52,
+      "customer_savings_year_1": -944.13,
       "recommendation": "Raise rate or reduce dealer incentive"
     },
     {
@@ -251,7 +280,7 @@ export const appData = {
       "readiness_score": 40.709,
       "qa_defects": 1,
       "priority_score": 283.985,
-      "customer_savings_year_1": -380.93,
+      "customer_savings_year_1": -746.82,
       "recommendation": "Raise rate or reduce dealer incentive"
     },
     {
@@ -280,7 +309,36 @@ export const appData = {
       "readiness_score": 49.106,
       "qa_defects": 6,
       "priority_score": 282.555,
-      "customer_savings_year_1": -1961.5,
+      "customer_savings_year_1": -2232.08,
+      "recommendation": "Raise rate or reduce dealer incentive"
+    },
+    {
+      "scenario_id": "SCN-137",
+      "state": "CO",
+      "channel": "Dealer partner",
+      "product": "Prepaid lease",
+      "product_type": "Lease",
+      "credit_band": "Near prime",
+      "dealer_tier": "National",
+      "system_kw": 7.371,
+      "battery_attach": "No",
+      "annual_kwh": 10961,
+      "project_cost": 20773.56,
+      "dealer_fee_pct": 0.022,
+      "funding_cost_pct": 0.064,
+      "loss_reserve_pct": 0.027,
+      "customer_monthly_payment": 0,
+      "rate_card": "$1470/kW prepaid, 2.2% dealer fee",
+      "npv": -1572.28,
+      "irr_pct": 0.004,
+      "contribution_margin_bps": -605.969,
+      "margin_gap_bps": -1319.459,
+      "competitor_gap_bps": 0.067,
+      "approval_lift_pts": 2.576,
+      "readiness_score": 43.962,
+      "qa_defects": 8,
+      "priority_score": 277.964,
+      "customer_savings_year_1": 1282.51,
       "recommendation": "Raise rate or reduce dealer incentive"
     },
     {
@@ -309,7 +367,36 @@ export const appData = {
       "readiness_score": 43.245,
       "qa_defects": 2,
       "priority_score": 273.979,
-      "customer_savings_year_1": -1373.66,
+      "customer_savings_year_1": -1586.21,
+      "recommendation": "Raise rate or reduce dealer incentive"
+    },
+    {
+      "scenario_id": "SCN-037",
+      "state": "AZ",
+      "channel": "Dealer partner",
+      "product": "Prepaid lease",
+      "product_type": "Lease",
+      "credit_band": "Prime",
+      "dealer_tier": "Emerging",
+      "system_kw": 7.661,
+      "battery_attach": "Yes",
+      "annual_kwh": 12497,
+      "project_cost": 28893.32,
+      "dealer_fee_pct": 0.066,
+      "funding_cost_pct": 0.051,
+      "loss_reserve_pct": 0.014,
+      "customer_monthly_payment": 0,
+      "rate_card": "$2125/kW prepaid, 6.6% dealer fee",
+      "npv": -1896.23,
+      "irr_pct": -0.016,
+      "contribution_margin_bps": -670.369,
+      "margin_gap_bps": -1312.309,
+      "competitor_gap_bps": 23.616,
+      "approval_lift_pts": 23.193,
+      "readiness_score": 49.781,
+      "qa_defects": 7,
+      "priority_score": 273.834,
+      "customer_savings_year_1": 1462.2,
       "recommendation": "Raise rate or reduce dealer incentive"
     },
     {
@@ -338,36 +425,7 @@ export const appData = {
       "readiness_score": 38.475,
       "qa_defects": 5,
       "priority_score": 272.685,
-      "customer_savings_year_1": -1638.08,
-      "recommendation": "Raise rate or reduce dealer incentive"
-    },
-    {
-      "scenario_id": "SCN-155",
-      "state": "NV",
-      "channel": "New homes",
-      "product": "Levelized PPA",
-      "product_type": "PPA",
-      "credit_band": "Near prime",
-      "dealer_tier": "Regional",
-      "system_kw": 6.264,
-      "battery_attach": "No",
-      "annual_kwh": 10285,
-      "project_cost": 17999.67,
-      "dealer_fee_pct": 0.059,
-      "funding_cost_pct": 0.066,
-      "loss_reserve_pct": 0.027,
-      "customer_monthly_payment": 104.63,
-      "rate_card": "$0.122/kWh, 0.00% escalator",
-      "npv": -5077.02,
-      "irr_pct": 0.021,
-      "contribution_margin_bps": -541.992,
-      "margin_gap_bps": -1311.702,
-      "competitor_gap_bps": -6.819,
-      "approval_lift_pts": 4.993,
-      "readiness_score": 38.877,
-      "qa_defects": 4,
-      "priority_score": 272.483,
-      "customer_savings_year_1": 390.1,
+      "customer_savings_year_1": -1785.67,
       "recommendation": "Raise rate or reduce dealer incentive"
     },
     {
@@ -396,7 +454,7 @@ export const appData = {
       "readiness_score": 42.435,
       "qa_defects": 9,
       "priority_score": 271.976,
-      "customer_savings_year_1": -301.05,
+      "customer_savings_year_1": -663.8,
       "recommendation": "Raise rate or reduce dealer incentive"
     },
     {
@@ -426,64 +484,6 @@ export const appData = {
       "qa_defects": 6,
       "priority_score": 263.525,
       "customer_savings_year_1": -1403.29,
-      "recommendation": "Raise rate or reduce dealer incentive"
-    },
-    {
-      "scenario_id": "SCN-137",
-      "state": "CO",
-      "channel": "Dealer partner",
-      "product": "Prepaid lease",
-      "product_type": "Lease",
-      "credit_band": "Near prime",
-      "dealer_tier": "National",
-      "system_kw": 7.371,
-      "battery_attach": "No",
-      "annual_kwh": 10961,
-      "project_cost": 20773.56,
-      "dealer_fee_pct": 0.022,
-      "funding_cost_pct": 0.064,
-      "loss_reserve_pct": 0.027,
-      "customer_monthly_payment": 0,
-      "rate_card": "$1470/kW prepaid, 2.2% dealer fee",
-      "npv": -1353.38,
-      "irr_pct": 0.013,
-      "contribution_margin_bps": -509.579,
-      "margin_gap_bps": -1223.069,
-      "competitor_gap_bps": 0.067,
-      "approval_lift_pts": 2.576,
-      "readiness_score": 43.962,
-      "qa_defects": 8,
-      "priority_score": 262.542,
-      "customer_savings_year_1": 1368.02,
-      "recommendation": "Raise rate or reduce dealer incentive"
-    },
-    {
-      "scenario_id": "SCN-121",
-      "state": "CO",
-      "channel": "Dealer partner",
-      "product": "Solar loan",
-      "product_type": "Loan",
-      "credit_band": "Near prime",
-      "dealer_tier": "National",
-      "system_kw": 7.19,
-      "battery_attach": "No",
-      "annual_kwh": 10992,
-      "project_cost": 24873.76,
-      "dealer_fee_pct": 0.114,
-      "funding_cost_pct": 0.067,
-      "loss_reserve_pct": 0.027,
-      "customer_monthly_payment": 255.72,
-      "rate_card": "10.20% APR, 11.4% dealer fee",
-      "npv": -1422.91,
-      "irr_pct": 0.061,
-      "contribution_margin_bps": -332.52,
-      "margin_gap_bps": -1064.633,
-      "competitor_gap_bps": 90.347,
-      "approval_lift_pts": 4.218,
-      "readiness_score": 44.652,
-      "qa_defects": 7,
-      "priority_score": 254.838,
-      "customer_savings_year_1": -1309.9,
       "recommendation": "Raise rate or reduce dealer incentive"
     }
   ],
@@ -616,7 +616,16 @@ export const appData = {
       "action": "Expand into next operating review",
       "owner": "Pricing manager",
       "meeting": "S&OP",
-      "estimated_margin_impact": 315199.31,
+      "estimated_margin_impact": 328784.08,
+      "due_week": "2026-06-19"
+    },
+    {
+      "action_id": "ACT-120",
+      "scenario_id": "SCN-120",
+      "action": "Expand into next operating review",
+      "owner": "Dealer ops",
+      "meeting": "Weekly pricing review",
+      "estimated_margin_impact": 186065.45,
       "due_week": "2026-06-19"
     },
     {
@@ -647,6 +656,15 @@ export const appData = {
       "due_week": "2026-06-19"
     },
     {
+      "action_id": "ACT-136",
+      "scenario_id": "SCN-136",
+      "action": "Raise rate or reduce dealer incentive",
+      "owner": "Product lead",
+      "meeting": "S&OP",
+      "estimated_margin_impact": 169240.96,
+      "due_week": "2026-06-19"
+    },
+    {
       "action_id": "ACT-052",
       "scenario_id": "SCN-052",
       "action": "Expand into next operating review",
@@ -665,40 +683,321 @@ export const appData = {
       "due_week": "2026-06-12"
     },
     {
-      "action_id": "ACT-136",
-      "scenario_id": "SCN-136",
-      "action": "Raise rate or reduce dealer incentive",
-      "owner": "Product lead",
-      "meeting": "S&OP",
-      "estimated_margin_impact": 158042.59,
-      "due_week": "2026-06-19"
-    },
-    {
-      "action_id": "ACT-060",
-      "scenario_id": "SCN-060",
+      "action_id": "ACT-134",
+      "scenario_id": "SCN-134",
       "action": "Raise rate or reduce dealer incentive",
       "owner": "Analytics",
-      "meeting": "Weekly pricing review",
-      "estimated_margin_impact": 156915.34,
-      "due_week": "2026-06-26"
-    },
-    {
-      "action_id": "ACT-104",
-      "scenario_id": "SCN-104",
-      "action": "Raise rate or reduce dealer incentive",
-      "owner": "Product lead",
       "meeting": "Product council",
-      "estimated_margin_impact": 155604.83,
-      "due_week": "2026-06-05"
+      "estimated_margin_impact": 166450.62,
+      "due_week": "2026-06-12"
     },
     {
-      "action_id": "ACT-120",
-      "scenario_id": "SCN-120",
-      "action": "Expand into next operating review",
+      "action_id": "ACT-079",
+      "scenario_id": "SCN-079",
+      "action": "Raise rate or reduce dealer incentive",
       "owner": "Dealer ops",
       "meeting": "Weekly pricing review",
-      "estimated_margin_impact": 154408.81,
-      "due_week": "2026-06-19"
+      "estimated_margin_impact": 160691.75,
+      "due_week": "2026-06-05"
+    }
+  ],
+  "assumptionLedger": [
+    {
+      "state": "CA",
+      "region": "West",
+      "residential_rate_cents_kwh": 32.0,
+      "annual_yield_kwh_per_kw": 1510,
+      "policy_score": 88,
+      "export_rule_friction": 16,
+      "model_use": "High residential electric rates, NEM 3.0 export-value pressure, strong solar adoption."
+    },
+    {
+      "state": "AZ",
+      "region": "West",
+      "residential_rate_cents_kwh": 15.0,
+      "annual_yield_kwh_per_kw": 1705,
+      "policy_score": 73,
+      "export_rule_friction": 9,
+      "model_use": "High production yield with moderate residential rates and utility-specific export rules."
+    },
+    {
+      "state": "TX",
+      "region": "South",
+      "residential_rate_cents_kwh": 15.0,
+      "annual_yield_kwh_per_kw": 1515,
+      "policy_score": 66,
+      "export_rule_friction": 8,
+      "model_use": "Large installer market, competitive retail power context, and uneven local incentives."
+    },
+    {
+      "state": "FL",
+      "region": "South",
+      "residential_rate_cents_kwh": 15.0,
+      "annual_yield_kwh_per_kw": 1490,
+      "policy_score": 69,
+      "export_rule_friction": 7,
+      "model_use": "High household load and solid production, with affordability-sensitive savings cases."
+    },
+    {
+      "state": "NJ",
+      "region": "Northeast",
+      "residential_rate_cents_kwh": 20.0,
+      "annual_yield_kwh_per_kw": 1260,
+      "policy_score": 81,
+      "export_rule_friction": 5,
+      "model_use": "Higher residential rates, REC-style value streams, and mature solar finance competition."
+    },
+    {
+      "state": "NY",
+      "region": "Northeast",
+      "residential_rate_cents_kwh": 26.0,
+      "annual_yield_kwh_per_kw": 1190,
+      "policy_score": 77,
+      "export_rule_friction": 6,
+      "model_use": "High residential rates, lower production yield, and heavier market-by-utility variation."
+    },
+    {
+      "state": "CO",
+      "region": "Mountain",
+      "residential_rate_cents_kwh": 15.0,
+      "annual_yield_kwh_per_kw": 1500,
+      "policy_score": 75,
+      "export_rule_friction": 6,
+      "model_use": "Moderate residential rates with strong solar resource and storage attach potential."
+    },
+    {
+      "state": "NV",
+      "region": "West",
+      "residential_rate_cents_kwh": 15.0,
+      "annual_yield_kwh_per_kw": 1730,
+      "policy_score": 71,
+      "export_rule_friction": 10,
+      "model_use": "Very strong production yield, moderate rates, and export-rule sensitivity."
+    }
+  ],
+  "sensitivityTests": [
+    {
+      "scenario_id": "SCN-060",
+      "state": "TX",
+      "product": "Prepaid lease",
+      "channel": "Direct homeowner",
+      "test": "Production -5%",
+      "baseline_margin_bps": -996.414,
+      "stressed_margin_bps": -1064.414,
+      "margin_delta_bps": -68,
+      "stressed_npv": -3201.02,
+      "decision_signal": "Block",
+      "action": "Require yield QA or reserve adjustment before launch"
+    },
+    {
+      "scenario_id": "SCN-060",
+      "state": "TX",
+      "product": "Prepaid lease",
+      "channel": "Direct homeowner",
+      "test": "Funding cost +50 bps",
+      "baseline_margin_bps": -996.414,
+      "stressed_margin_bps": -1046.414,
+      "margin_delta_bps": -50,
+      "stressed_npv": -3288.99,
+      "decision_signal": "Block",
+      "action": "Check investor hurdle and dealer fee offset"
+    },
+    {
+      "scenario_id": "SCN-060",
+      "state": "TX",
+      "product": "Prepaid lease",
+      "channel": "Direct homeowner",
+      "test": "Competitor match",
+      "baseline_margin_bps": -996.414,
+      "stressed_margin_bps": -1006.271,
+      "margin_delta_bps": -9.857,
+      "stressed_npv": -3113.05,
+      "decision_signal": "Block",
+      "action": "Use selectively where proposal win risk is high"
+    },
+    {
+      "scenario_id": "SCN-060",
+      "state": "TX",
+      "product": "Prepaid lease",
+      "channel": "Direct homeowner",
+      "test": "Dealer fee -100 bps",
+      "baseline_margin_bps": -996.414,
+      "stressed_margin_bps": -924.414,
+      "margin_delta_bps": 72,
+      "stressed_npv": -2585.22,
+      "decision_signal": "Block",
+      "action": "Use if dealer economics can absorb lower incentive"
+    },
+    {
+      "scenario_id": "SCN-037",
+      "state": "AZ",
+      "product": "Prepaid lease",
+      "channel": "Dealer partner",
+      "test": "Production -5%",
+      "baseline_margin_bps": -670.369,
+      "stressed_margin_bps": -738.369,
+      "margin_delta_bps": -68,
+      "stressed_npv": -2416.31,
+      "decision_signal": "Block",
+      "action": "Require yield QA or reserve adjustment before launch"
+    },
+    {
+      "scenario_id": "SCN-037",
+      "state": "AZ",
+      "product": "Prepaid lease",
+      "channel": "Dealer partner",
+      "test": "Funding cost +50 bps",
+      "baseline_margin_bps": -670.369,
+      "stressed_margin_bps": -720.369,
+      "margin_delta_bps": -50,
+      "stressed_npv": -2531.88,
+      "decision_signal": "Block",
+      "action": "Check investor hurdle and dealer fee offset"
+    },
+    {
+      "scenario_id": "SCN-155",
+      "state": "NV",
+      "product": "Levelized PPA",
+      "channel": "New homes",
+      "test": "Production -5%",
+      "baseline_margin_bps": -640.28,
+      "stressed_margin_bps": -708.28,
+      "margin_delta_bps": -68,
+      "stressed_npv": -6351.75,
+      "decision_signal": "Block",
+      "action": "Require yield QA or reserve adjustment before launch"
+    },
+    {
+      "scenario_id": "SCN-155",
+      "state": "NV",
+      "product": "Levelized PPA",
+      "channel": "New homes",
+      "test": "Funding cost +50 bps",
+      "baseline_margin_bps": -640.28,
+      "stressed_margin_bps": -690.28,
+      "margin_delta_bps": -50,
+      "stressed_npv": -6423.75,
+      "decision_signal": "Block",
+      "action": "Check investor hurdle and dealer fee offset"
+    },
+    {
+      "scenario_id": "SCN-037",
+      "state": "AZ",
+      "product": "Prepaid lease",
+      "channel": "Dealer partner",
+      "test": "Competitor match",
+      "baseline_margin_bps": -670.369,
+      "stressed_margin_bps": -683.358,
+      "margin_delta_bps": -12.989,
+      "stressed_npv": -2300.74,
+      "decision_signal": "Block",
+      "action": "Use selectively where proposal win risk is high"
+    },
+    {
+      "scenario_id": "SCN-137",
+      "state": "CO",
+      "product": "Prepaid lease",
+      "channel": "Dealer partner",
+      "test": "Production -5%",
+      "baseline_margin_bps": -605.969,
+      "stressed_margin_bps": -673.969,
+      "margin_delta_bps": -68,
+      "stressed_npv": -1946.2,
+      "decision_signal": "Block",
+      "action": "Require yield QA or reserve adjustment before launch"
+    },
+    {
+      "scenario_id": "SCN-137",
+      "state": "CO",
+      "product": "Prepaid lease",
+      "channel": "Dealer partner",
+      "test": "Funding cost +50 bps",
+      "baseline_margin_bps": -605.969,
+      "stressed_margin_bps": -655.969,
+      "margin_delta_bps": -50,
+      "stressed_npv": -2029.3,
+      "decision_signal": "Block",
+      "action": "Check investor hurdle and dealer fee offset"
+    },
+    {
+      "scenario_id": "SCN-155",
+      "state": "NV",
+      "product": "Levelized PPA",
+      "channel": "New homes",
+      "test": "Competitor match",
+      "baseline_margin_bps": -640.28,
+      "stressed_margin_bps": -640.28,
+      "margin_delta_bps": -0.0,
+      "stressed_npv": -6279.76,
+      "decision_signal": "Block",
+      "action": "Use selectively where proposal win risk is high"
+    }
+  ],
+  "launchGates": [
+    {
+      "launch_gate": "New homes operating lease",
+      "product": "Operating lease",
+      "channel": "New homes",
+      "state_focus": "CA, AZ, CO",
+      "avg_readiness": 75.432,
+      "avg_margin_bps": 1017.396,
+      "avg_competitor_gap_bps": 13.972,
+      "open_qa_defects": 34,
+      "status": "Ready for operating review",
+      "blocker": "Builder onboarding and Title 24 package readiness",
+      "next_step": "Package rate card and launch notes for approval"
+    },
+    {
+      "launch_gate": "Prepaid lease expansion",
+      "product": "Prepaid lease",
+      "channel": "Direct homeowner",
+      "state_focus": "TX, FL, NV",
+      "avg_readiness": 63.334,
+      "avg_margin_bps": 187.267,
+      "avg_competitor_gap_bps": 3.234,
+      "open_qa_defects": 24,
+      "status": "Monitor",
+      "blocker": "Buyout disclosure, payment display, and savings narrative",
+      "next_step": "Keep in weekly pricing digest"
+    },
+    {
+      "launch_gate": "Levelized PPA refresh",
+      "product": "Levelized PPA",
+      "channel": "Dealer partner",
+      "state_focus": "CA, NJ, NY",
+      "avg_readiness": 56.785,
+      "avg_margin_bps": 38.986,
+      "avg_competitor_gap_bps": 11.584,
+      "open_qa_defects": 37,
+      "status": "Needs platform QA",
+      "blocker": "Escalator QA and utility-rate comparison language",
+      "next_step": "Clear defects before dealer enablement"
+    },
+    {
+      "launch_gate": "Storage loan rate-card update",
+      "product": "Solar plus storage loan",
+      "channel": "Installer platform",
+      "state_focus": "CA, AZ, NV",
+      "avg_readiness": 54.672,
+      "avg_margin_bps": -26.415,
+      "avg_competitor_gap_bps": 133.133,
+      "open_qa_defects": 38,
+      "status": "Needs pricing work",
+      "blocker": "Battery attach economics and funding milestone logic",
+      "next_step": "Reprice assumptions before product council"
+    },
+    {
+      "launch_gate": "Core solar loan competitive reset",
+      "product": "Solar loan",
+      "channel": "Dealer partner",
+      "state_focus": "All active states",
+      "avg_readiness": 50.552,
+      "avg_margin_bps": -164.407,
+      "avg_competitor_gap_bps": 34.423,
+      "open_qa_defects": 33,
+      "status": "Needs pricing work",
+      "blocker": "Competitor APR gap and dealer incentive pressure",
+      "next_step": "Reprice assumptions before product council"
     }
   ]
 };

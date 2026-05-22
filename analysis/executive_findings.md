@@ -8,7 +8,8 @@ I modeled 160 synthetic residential solar finance pricing scenarios across 8 sta
 
 - The highest-priority rate-card action is SCN-060, a TX Prepaid lease scenario in the Direct homeowner channel.
 - The scenario combines 17.921 bps of competitor gap, -1595.224 bps of margin gap, 4 QA defects, and a 48.764 readiness score.
-- 33 scenarios clear the expansion-readiness threshold while 49 scenarios show high proposal win risk.
+- 32 scenarios clear the expansion-readiness threshold while 49 scenarios show high proposal win risk.
+- The sensitivity layer flags 35 stressed cases that would need a pricing hold or investor-economics review.
 - Product economics are strongest for Operating lease with an average margin of 1025.282 bps.
 
 ## Recommendation

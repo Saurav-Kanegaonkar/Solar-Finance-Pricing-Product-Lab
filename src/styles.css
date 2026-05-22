@@ -83,7 +83,14 @@ p {
   line-height: 1.55;
 }
 
-.jump-link {
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.topnav a {
   flex: 0 0 auto;
   border: 1px solid var(--line);
   background: var(--paper);
@@ -343,12 +350,91 @@ mark.high {
   color: var(--red);
 }
 
+mark.block {
+  background: #fff0ee;
+  color: var(--red);
+}
+
+mark.reprice {
+  background: #fff7e6;
+  color: var(--gold);
+}
+
+mark.pass {
+  background: #e9f5ef;
+  color: var(--green);
+}
+
 .qa-panel {
   grid-column: span 1;
 }
 
-.action-panel {
+.launch-panel {
   grid-column: span 1;
+}
+
+.action-panel {
+  grid-column: 1 / -1;
+}
+
+.launch-list {
+  display: grid;
+  gap: 12px;
+}
+
+.launch-list article {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.9fr);
+  gap: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.launch-list article:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.launch-list span {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.launch-list h3 {
+  margin-top: 4px;
+}
+
+.launch-list p {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.launch-list dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.launch-list dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.launch-list dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.launch-list dd {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: right;
 }
 
 .action-list {
@@ -382,8 +468,13 @@ mark.high {
 @media (max-width: 980px) {
   .hero-band,
   .surface-grid,
-  .metric-grid {
+  .metric-grid,
+  .launch-list article {
     grid-template-columns: 1fr;
+  }
+
+  .topnav {
+    justify-content: flex-start;
   }
 
   .hero-copy h2 {

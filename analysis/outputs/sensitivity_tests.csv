@@ -1,0 +1,41 @@
+scenario_id,state,product,channel,test,baseline_margin_bps,stressed_margin_bps,margin_delta_bps,stressed_npv,decision_signal,action
+SCN-060,TX,Prepaid lease,Direct homeowner,Production -5%,-996.414,-1064.414,-68,-3201.02,Block,Require yield QA or reserve adjustment before launch
+SCN-060,TX,Prepaid lease,Direct homeowner,Funding cost +50 bps,-996.414,-1046.414,-50,-3288.99,Block,Check investor hurdle and dealer fee offset
+SCN-060,TX,Prepaid lease,Direct homeowner,Competitor match,-996.414,-1006.271,-9.857,-3113.05,Block,Use selectively where proposal win risk is high
+SCN-060,TX,Prepaid lease,Direct homeowner,Dealer fee -100 bps,-996.414,-924.414,72,-2585.22,Block,Use if dealer economics can absorb lower incentive
+SCN-037,AZ,Prepaid lease,Dealer partner,Production -5%,-670.369,-738.369,-68,-2416.31,Block,Require yield QA or reserve adjustment before launch
+SCN-037,AZ,Prepaid lease,Dealer partner,Funding cost +50 bps,-670.369,-720.369,-50,-2531.88,Block,Check investor hurdle and dealer fee offset
+SCN-155,NV,Levelized PPA,New homes,Production -5%,-640.28,-708.28,-68,-6351.75,Block,Require yield QA or reserve adjustment before launch
+SCN-155,NV,Levelized PPA,New homes,Funding cost +50 bps,-640.28,-690.28,-50,-6423.75,Block,Check investor hurdle and dealer fee offset
+SCN-037,AZ,Prepaid lease,Dealer partner,Competitor match,-670.369,-683.358,-12.989,-2300.74,Block,Use selectively where proposal win risk is high
+SCN-137,CO,Prepaid lease,Dealer partner,Production -5%,-605.969,-673.969,-68,-1946.2,Block,Require yield QA or reserve adjustment before launch
+SCN-137,CO,Prepaid lease,Dealer partner,Funding cost +50 bps,-605.969,-655.969,-50,-2029.3,Block,Check investor hurdle and dealer fee offset
+SCN-155,NV,Levelized PPA,New homes,Competitor match,-640.28,-640.28,-0.0,-6279.76,Block,Use selectively where proposal win risk is high
+SCN-137,CO,Prepaid lease,Dealer partner,Competitor match,-605.969,-606.006,-0.037,-1863.11,Block,Use selectively where proposal win risk is high
+SCN-066,FL,Solar plus storage loan,Installer platform,Competitor match,-505.538,-601.688,-96.15,-4729.55,Block,Use selectively where proposal win risk is high
+SCN-037,AZ,Prepaid lease,Dealer partner,Dealer fee -100 bps,-670.369,-598.369,72,-1607.3,Block,Use if dealer economics can absorb lower incentive
+SCN-155,NV,Levelized PPA,New homes,Dealer fee -100 bps,-640.28,-568.28,72,-5847.76,Block,Use if dealer economics can absorb lower incentive
+SCN-066,FL,Solar plus storage loan,Installer platform,Funding cost +50 bps,-505.538,-555.538,-50,-4896.38,Block,Check investor hurdle and dealer fee offset
+SCN-137,CO,Prepaid lease,Dealer partner,Dealer fee -100 bps,-605.969,-533.969,72,-1364.54,Block,Use if dealer economics can absorb lower incentive
+SCN-066,FL,Solar plus storage loan,Installer platform,Production -5%,-505.538,-523.538,-18,-4812.97,Block,Require yield QA or reserve adjustment before launch
+SCN-023,AZ,Solar loan,New homes,Competitor match,-418.429,-516.33,-97.901,-3327.19,Block,Use selectively where proposal win risk is high
+SCN-107,NY,Solar plus storage loan,New homes,Competitor match,-406.544,-514.702,-108.158,-3284.13,Block,Use selectively where proposal win risk is high
+SCN-023,AZ,Solar loan,New homes,Funding cost +50 bps,-418.429,-468.429,-50,-3506.93,Block,Check investor hurdle and dealer fee offset
+SCN-107,NY,Solar plus storage loan,New homes,Funding cost +50 bps,-406.544,-456.544,-50,-3470.59,Block,Check investor hurdle and dealer fee offset
+SCN-023,AZ,Solar loan,New homes,Production -5%,-418.429,-436.429,-18,-3417.06,Block,Require yield QA or reserve adjustment before launch
+SCN-066,FL,Solar plus storage loan,Installer platform,Dealer fee -100 bps,-505.538,-433.538,72,-4229.08,Block,Use if dealer economics can absorb lower incentive
+SCN-107,NY,Solar plus storage loan,New homes,Production -5%,-406.544,-424.544,-18,-3377.36,Block,Require yield QA or reserve adjustment before launch
+SCN-068,FL,Solar plus storage loan,Direct homeowner,Competitor match,-310.815,-420.815,-110,-1337.23,Block,Use selectively where proposal win risk is high
+SCN-147,NV,Solar plus storage loan,New homes,Competitor match,-287.253,-397.253,-110,-980.31,Block,Use selectively where proposal win risk is high
+SCN-068,FL,Solar plus storage loan,Direct homeowner,Funding cost +50 bps,-310.815,-360.815,-50,-1540.98,Block,Check investor hurdle and dealer fee offset
+SCN-023,AZ,Solar loan,New homes,Dealer fee -100 bps,-418.429,-346.429,72,-2787.96,Block,Use if dealer economics can absorb lower incentive
+SCN-147,NV,Solar plus storage loan,New homes,Funding cost +50 bps,-287.253,-337.253,-50,-1240.34,Block,Check investor hurdle and dealer fee offset
+SCN-107,NY,Solar plus storage loan,New homes,Dealer fee -100 bps,-406.544,-334.544,72,-2724.74,Block,Use if dealer economics can absorb lower incentive
+SCN-068,FL,Solar plus storage loan,Direct homeowner,Production -5%,-310.815,-328.815,-18,-1439.11,Block,Require yield QA or reserve adjustment before launch
+SCN-147,NV,Solar plus storage loan,New homes,Production -5%,-287.253,-305.253,-18,-1110.32,Block,Require yield QA or reserve adjustment before launch
+SCN-085,NJ,Solar plus storage loan,Dealer partner,Competitor match,-192.793,-302.793,-110,2331.46,Block,Use selectively where proposal win risk is high
+SCN-085,NJ,Solar plus storage loan,Dealer partner,Funding cost +50 bps,-192.793,-242.793,-50,2022.36,Reprice,Check investor hurdle and dealer fee offset
+SCN-068,FL,Solar plus storage loan,Direct homeowner,Dealer fee -100 bps,-310.815,-238.815,72,-725.98,Reprice,Use if dealer economics can absorb lower incentive
+SCN-147,NV,Solar plus storage loan,New homes,Dealer fee -100 bps,-287.253,-215.253,72,-200.21,Reprice,Use if dealer economics can absorb lower incentive
+SCN-085,NJ,Solar plus storage loan,Dealer partner,Production -5%,-192.793,-210.793,-18,2176.91,Reprice,Require yield QA or reserve adjustment before launch
+SCN-085,NJ,Solar plus storage loan,Dealer partner,Dealer fee -100 bps,-192.793,-120.793,72,3258.77,Reprice,Use if dealer economics can absorb lower incentive

@@ -1,6 +1,16 @@
 import { appData } from "./data.js";
 
-const { summary, productSummary, stateSummary, rateCardActions, qaQueue, stakeholderActions } = appData;
+const {
+  summary,
+  productSummary,
+  stateSummary,
+  rateCardActions,
+  qaQueue,
+  stakeholderActions,
+  assumptionLedger,
+  sensitivityTests,
+  launchGates,
+} = appData;
 
 const formatMoney = (value) =>
   Number(value).toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -82,6 +92,57 @@ function renderActions(rows) {
     .join("");
 }
 
+function renderAssumptions(rows) {
+  return rows
+    .map((row) => `
+      <tr>
+        <td><strong>${row.state}</strong><span>${row.region}</span></td>
+        <td>${Number(row.residential_rate_cents_kwh).toFixed(1)} cents<span>residential rate anchor</span></td>
+        <td>${Number(row.annual_yield_kwh_per_kw).toLocaleString()}<span>kWh per kW-year</span></td>
+        <td>${row.policy_score}<span>policy score</span></td>
+        <td>${row.model_use}</td>
+      </tr>
+    `)
+    .join("");
+}
+
+function renderSensitivity(rows) {
+  return rows
+    .slice(0, 8)
+    .map((row) => `
+      <tr>
+        <td><strong>${row.scenario_id}</strong><span>${row.state} | ${row.product}</span></td>
+        <td>${row.test}<span>${row.channel}</span></td>
+        <td>${formatBps(row.baseline_margin_bps)}<span>baseline</span></td>
+        <td>${formatBps(row.stressed_margin_bps)}<span>${formatBps(row.margin_delta_bps)} delta</span></td>
+        <td><mark class="${row.decision_signal.toLowerCase()}">${row.decision_signal}</mark></td>
+        <td>${row.action}</td>
+      </tr>
+    `)
+    .join("");
+}
+
+function renderLaunchGates(rows) {
+  return rows
+    .map((row) => `
+      <article>
+        <div>
+          <span>${row.channel}</span>
+          <h3>${row.launch_gate}</h3>
+          <p>${row.blocker}</p>
+        </div>
+        <dl>
+          <div><dt>Status</dt><dd>${row.status}</dd></div>
+          <div><dt>Readiness</dt><dd>${Number(row.avg_readiness).toFixed(1)}</dd></div>
+          <div><dt>Margin</dt><dd>${formatBps(row.avg_margin_bps)}</dd></div>
+          <div><dt>QA defects</dt><dd>${row.open_qa_defects}</dd></div>
+        </dl>
+        <p>${row.next_step}</p>
+      </article>
+    `)
+    .join("");
+}
+
 function render() {
   const top = summary.topScenario;
   document.querySelector("#app").innerHTML = `
@@ -90,7 +151,11 @@ function render() {
         <p class="eyebrow">Residential solar finance</p>
         <h1>Pricing and product workbench</h1>
       </div>
-      <a href="#scenario-model" class="jump-link">Rate-card queue</a>
+      <nav class="topnav" aria-label="Workbench sections">
+        <a href="#scenario-model">Rate card</a>
+        <a href="#sensitivity-lab">Sensitivity</a>
+        <a href="#market-qa">Launch QA</a>
+      </nav>
     </header>
 
     <main>
@@ -159,7 +224,57 @@ function render() {
         </div>
       </section>
 
+      <section class="table-surface" id="sensitivity-lab">
+        <div class="panel-head">
+          <p class="eyebrow">Assumption ledger</p>
+          <h2>Public-market anchors behind the synthetic model</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Electric rate</th>
+                <th>Production yield</th>
+                <th>Policy</th>
+                <th>Model use</th>
+              </tr>
+            </thead>
+            <tbody>${renderAssumptions(assumptionLedger)}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="table-surface">
+        <div class="panel-head">
+          <p class="eyebrow">Sensitivity tests</p>
+          <h2>Rate-card stress checks before launch approval</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Stress test</th>
+                <th>Base margin</th>
+                <th>Stressed margin</th>
+                <th>Signal</th>
+                <th>Pricing action</th>
+              </tr>
+            </thead>
+            <tbody>${renderSensitivity(sensitivityTests)}</tbody>
+          </table>
+        </div>
+      </section>
+
       <section class="surface-grid" id="market-qa">
+        <article class="panel launch-panel">
+          <div class="panel-head">
+            <p class="eyebrow">New-product gates</p>
+            <h2>Launch readiness by product surface</h2>
+          </div>
+          <div class="launch-list">${renderLaunchGates(launchGates)}</div>
+        </article>
         <article class="panel qa-panel">
           <div class="panel-head">
             <p class="eyebrow">Platform QA</p>
@@ -180,6 +295,9 @@ function render() {
             </table>
           </div>
         </article>
+      </section>
+
+      <section class="surface-grid">
         <article class="panel action-panel">
           <div class="panel-head">
             <p class="eyebrow">S&OP brief</p>

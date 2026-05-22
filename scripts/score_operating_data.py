@@ -14,6 +14,81 @@ SRC_DIR = ROOT / "src"
 
 RNG = random.Random(42)
 
+STATE_ASSUMPTIONS = [
+    {
+        "state": "CA",
+        "region": "West",
+        "policy_score": 88,
+        "yield": 1510,
+        "utility_rate": 0.32,
+        "nem_friction": 16,
+        "anchor_note": "High residential electric rates, NEM 3.0 export-value pressure, strong solar adoption.",
+    },
+    {
+        "state": "AZ",
+        "region": "West",
+        "policy_score": 73,
+        "yield": 1705,
+        "utility_rate": 0.15,
+        "nem_friction": 9,
+        "anchor_note": "High production yield with moderate residential rates and utility-specific export rules.",
+    },
+    {
+        "state": "TX",
+        "region": "South",
+        "policy_score": 66,
+        "yield": 1515,
+        "utility_rate": 0.15,
+        "nem_friction": 8,
+        "anchor_note": "Large installer market, competitive retail power context, and uneven local incentives.",
+    },
+    {
+        "state": "FL",
+        "region": "South",
+        "policy_score": 69,
+        "yield": 1490,
+        "utility_rate": 0.15,
+        "nem_friction": 7,
+        "anchor_note": "High household load and solid production, with affordability-sensitive savings cases.",
+    },
+    {
+        "state": "NJ",
+        "region": "Northeast",
+        "policy_score": 81,
+        "yield": 1260,
+        "utility_rate": 0.20,
+        "nem_friction": 5,
+        "anchor_note": "Higher residential rates, REC-style value streams, and mature solar finance competition.",
+    },
+    {
+        "state": "NY",
+        "region": "Northeast",
+        "policy_score": 77,
+        "yield": 1190,
+        "utility_rate": 0.26,
+        "nem_friction": 6,
+        "anchor_note": "High residential rates, lower production yield, and heavier market-by-utility variation.",
+    },
+    {
+        "state": "CO",
+        "region": "Mountain",
+        "policy_score": 75,
+        "yield": 1500,
+        "utility_rate": 0.15,
+        "nem_friction": 6,
+        "anchor_note": "Moderate residential rates with strong solar resource and storage attach potential.",
+    },
+    {
+        "state": "NV",
+        "region": "West",
+        "policy_score": 71,
+        "yield": 1730,
+        "utility_rate": 0.15,
+        "nem_friction": 10,
+        "anchor_note": "Very strong production yield, moderate rates, and export-rule sensitivity.",
+    },
+]
+
 
 def money(value):
     return round(value, 2)
@@ -69,16 +144,7 @@ def weighted_choice(options):
 
 
 def build_scenarios():
-    states = [
-        {"state": "CA", "policy_score": 88, "yield": 1510, "utility_rate": 0.31, "nem_friction": 16},
-        {"state": "AZ", "policy_score": 73, "yield": 1705, "utility_rate": 0.18, "nem_friction": 9},
-        {"state": "TX", "policy_score": 66, "yield": 1515, "utility_rate": 0.15, "nem_friction": 8},
-        {"state": "FL", "policy_score": 69, "yield": 1490, "utility_rate": 0.17, "nem_friction": 7},
-        {"state": "NJ", "policy_score": 81, "yield": 1260, "utility_rate": 0.22, "nem_friction": 5},
-        {"state": "NY", "policy_score": 77, "yield": 1190, "utility_rate": 0.24, "nem_friction": 6},
-        {"state": "CO", "policy_score": 75, "yield": 1500, "utility_rate": 0.16, "nem_friction": 6},
-        {"state": "NV", "policy_score": 71, "yield": 1730, "utility_rate": 0.16, "nem_friction": 10},
-    ]
+    states = STATE_ASSUMPTIONS
     products = [
         {"product": "Solar loan", "type": "Loan", "term": 25, "base_apr": 0.079, "base_fee": 0.115},
         {"product": "Solar plus storage loan", "type": "Loan", "term": 25, "base_apr": 0.084, "base_fee": 0.135},
@@ -276,7 +342,7 @@ def build_scenarios():
                         "action": recommendation,
                         "owner": weighted_choice([("Pricing manager", 0.36), ("Product lead", 0.22), ("Analytics", 0.2), ("Dealer ops", 0.22)]),
                         "meeting": weighted_choice([("Weekly pricing review", 0.44), ("S&OP", 0.24), ("Platform QA standup", 0.18), ("Product council", 0.14)]),
-                    "estimated_margin_impact": money(min(425000, max(12000, abs(margin_gap) * system_kw * 14))),
+                        "estimated_margin_impact": money(min(425000, max(12000, abs(margin_gap) * system_kw * 14))),
                         "due_week": weighted_choice([("2026-06-05", 0.34), ("2026-06-12", 0.34), ("2026-06-19", 0.22), ("2026-06-26", 0.1)]),
                     }
                 )
@@ -284,6 +350,164 @@ def build_scenarios():
                 scenario_id += 1
 
     return scenario_rows, competitive_rows, qa_rows, action_rows
+
+
+def build_assumption_rows():
+    return [
+        {
+            "state": row["state"],
+            "region": row["region"],
+            "residential_rate_cents_kwh": pct(row["utility_rate"] * 100),
+            "annual_yield_kwh_per_kw": row["yield"],
+            "policy_score": row["policy_score"],
+            "export_rule_friction": row["nem_friction"],
+            "model_use": row["anchor_note"],
+        }
+        for row in STATE_ASSUMPTIONS
+    ]
+
+
+def build_sensitivities(scenarios):
+    tests = [
+        {
+            "test": "Funding cost +50 bps",
+            "margin_delta": -50,
+            "npv_factor": -0.022,
+            "action": "Check investor hurdle and dealer fee offset",
+        },
+        {
+            "test": "Dealer fee -100 bps",
+            "margin_delta": 72,
+            "npv_factor": 0.01,
+            "action": "Use if dealer economics can absorb lower incentive",
+        },
+        {
+            "test": "Competitor match",
+            "margin_delta": None,
+            "npv_factor": -0.014,
+            "action": "Use selectively where proposal win risk is high",
+        },
+        {
+            "test": "Production -5%",
+            "margin_delta": None,
+            "npv_factor": -0.018,
+            "action": "Require yield QA or reserve adjustment before launch",
+        },
+    ]
+    rows = []
+    for scenario in sorted(scenarios, key=lambda row: float(row["priority_score"]), reverse=True)[:10]:
+        base_margin = float(scenario["contribution_margin_bps"])
+        project_cost = float(scenario["project_cost"])
+        competitor_gap = max(0, float(scenario["competitor_gap_bps"]))
+        for test in tests:
+            if test["test"] == "Competitor match":
+                margin_delta = -min(110, competitor_gap * 0.55)
+            elif test["test"] == "Production -5%":
+                margin_delta = -68 if scenario["product_type"] in {"Lease", "PPA"} else -18
+            else:
+                margin_delta = test["margin_delta"]
+            stressed_margin = base_margin + margin_delta
+            stressed_npv = float(scenario["npv"]) + project_cost * test["npv_factor"]
+            rows.append(
+                {
+                    "scenario_id": scenario["scenario_id"],
+                    "state": scenario["state"],
+                    "product": scenario["product"],
+                    "channel": scenario["channel"],
+                    "test": test["test"],
+                    "baseline_margin_bps": pct(base_margin),
+                    "stressed_margin_bps": pct(stressed_margin),
+                    "margin_delta_bps": pct(margin_delta),
+                    "stressed_npv": money(stressed_npv),
+                    "decision_signal": "Block" if stressed_margin < -250 else "Reprice" if stressed_margin < 0 else "Pass",
+                    "action": test["action"],
+                }
+            )
+    rows.sort(key=lambda row: (row["decision_signal"] != "Block", float(row["stressed_margin_bps"])))
+    return rows
+
+
+def build_launch_gates(scenarios, qa):
+    gate_defs = [
+        {
+            "launch_gate": "New homes operating lease",
+            "product": "Operating lease",
+            "channel": "New homes",
+            "state_focus": "CA, AZ, CO",
+            "blocker": "Builder onboarding and Title 24 package readiness",
+        },
+        {
+            "launch_gate": "Prepaid lease expansion",
+            "product": "Prepaid lease",
+            "channel": "Direct homeowner",
+            "state_focus": "TX, FL, NV",
+            "blocker": "Buyout disclosure, payment display, and savings narrative",
+        },
+        {
+            "launch_gate": "Levelized PPA refresh",
+            "product": "Levelized PPA",
+            "channel": "Dealer partner",
+            "state_focus": "CA, NJ, NY",
+            "blocker": "Escalator QA and utility-rate comparison language",
+        },
+        {
+            "launch_gate": "Storage loan rate-card update",
+            "product": "Solar plus storage loan",
+            "channel": "Installer platform",
+            "state_focus": "CA, AZ, NV",
+            "blocker": "Battery attach economics and funding milestone logic",
+        },
+        {
+            "launch_gate": "Core solar loan competitive reset",
+            "product": "Solar loan",
+            "channel": "Dealer partner",
+            "state_focus": "All active states",
+            "blocker": "Competitor APR gap and dealer incentive pressure",
+        },
+    ]
+    qa_by_scenario = {row["scenario_id"]: row for row in qa}
+    rows = []
+    for gate in gate_defs:
+        matches = [
+            row
+            for row in scenarios
+            if row["product"] == gate["product"] and row["channel"] == gate["channel"]
+        ]
+        if not matches:
+            continue
+        avg_readiness = sum(float(row["readiness_score"]) for row in matches) / len(matches)
+        avg_margin = sum(float(row["contribution_margin_bps"]) for row in matches) / len(matches)
+        avg_comp_gap = sum(float(row["competitor_gap_bps"]) for row in matches) / len(matches)
+        qa_defects = sum(int(qa_by_scenario[row["scenario_id"]]["open_defects"]) for row in matches)
+        if avg_readiness >= 72 and avg_margin > 180 and qa_defects < 36:
+            status = "Ready for operating review"
+            next_step = "Package rate card and launch notes for approval"
+        elif avg_margin < 0 or avg_comp_gap > 55:
+            status = "Needs pricing work"
+            next_step = "Reprice assumptions before product council"
+        elif qa_defects >= 36:
+            status = "Needs platform QA"
+            next_step = "Clear defects before dealer enablement"
+        else:
+            status = "Monitor"
+            next_step = "Keep in weekly pricing digest"
+        rows.append(
+            {
+                "launch_gate": gate["launch_gate"],
+                "product": gate["product"],
+                "channel": gate["channel"],
+                "state_focus": gate["state_focus"],
+                "avg_readiness": pct(avg_readiness),
+                "avg_margin_bps": pct(avg_margin),
+                "avg_competitor_gap_bps": pct(avg_comp_gap),
+                "open_qa_defects": qa_defects,
+                "status": status,
+                "blocker": gate["blocker"],
+                "next_step": next_step,
+            }
+        )
+    rows.sort(key=lambda row: (row["status"] != "Ready for operating review", -float(row["avg_readiness"])))
+    return rows
 
 
 def summarize(scenarios, competitive, qa, actions):
@@ -325,6 +549,9 @@ def summarize(scenarios, competitive, qa, actions):
         )
     state_summary.sort(key=lambda row: float(row["avg_readiness"]), reverse=True)
 
+    assumption_rows = build_assumption_rows()
+    sensitivities = build_sensitivities(scenarios)
+    launch_gates = build_launch_gates(scenarios, qa)
     summary = {
         "scenario_count": len(scenarios),
         "state_count": len(by_state),
@@ -340,6 +567,9 @@ def summarize(scenarios, competitive, qa, actions):
         "market_expansion_queue": state_summary,
         "qa_readiness_queue": sorted(qa, key=lambda row: (row["severity"], int(row["open_defects"])), reverse=True)[:18],
         "actions": sorted(actions, key=lambda row: float(row["estimated_margin_impact"]), reverse=True)[:18],
+        "assumption_rows": assumption_rows,
+        "sensitivity_tests": sensitivities,
+        "launch_gates": launch_gates,
     }
     return summary
 
@@ -366,6 +596,21 @@ def write_analysis(summary):
         summary["actions"],
         list(summary["actions"][0].keys()),
     )
+    write_csv(
+        OUTPUT_DIR / "assumption_ledger.csv",
+        summary["assumption_rows"],
+        list(summary["assumption_rows"][0].keys()),
+    )
+    write_csv(
+        OUTPUT_DIR / "sensitivity_tests.csv",
+        summary["sensitivity_tests"],
+        list(summary["sensitivity_tests"][0].keys()),
+    )
+    write_csv(
+        OUTPUT_DIR / "launch_gate_queue.csv",
+        summary["launch_gates"],
+        list(summary["launch_gates"][0].keys()),
+    )
     with (OUTPUT_DIR / "summary.json").open("w") as handle:
         json.dump(summary, handle, indent=2)
 
@@ -384,6 +629,7 @@ def write_analysis(summary):
                 f"- The highest-priority rate-card action is {top['scenario_id']}, a {top['state']} {top['product']} scenario in the {top['channel']} channel.",
                 f"- The scenario combines {top['competitor_gap_bps']} bps of competitor gap, {top['margin_gap_bps']} bps of margin gap, {top['qa_defects']} QA defects, and a {top['readiness_score']} readiness score.",
                 f"- {summary['ready_count']} scenarios clear the expansion-readiness threshold while {summary['high_win_risk_count']} scenarios show high proposal win risk.",
+                f"- The sensitivity layer flags {sum(1 for row in summary['sensitivity_tests'] if row['decision_signal'] == 'Block')} stressed cases that would need a pricing hold or investor-economics review.",
                 f"- Product economics are strongest for {summary['product_summary'][0]['product']} with an average margin of {summary['product_summary'][0]['avg_margin_bps']} bps.",
                 "",
                 "## Recommendation",
@@ -402,8 +648,9 @@ def write_analysis(summary):
                 "1. Generate product scenarios by state, channel, product type, credit band, and dealer tier.",
                 "2. Convert pricing inputs into customer payment, dealer fee, NPV, IRR, contribution margin, and funding-cost gap.",
                 "3. Join competitor offers and dealer incentives to estimate proposal win risk.",
-                "4. Score state and channel readiness using policy fit, approval lift, margin gap, and product complexity.",
-                "5. Rank rate-card actions, market expansion opportunities, QA risks, and stakeholder follow-ups.",
+                "4. Apply sensitivity tests for funding-cost shocks, dealer-fee changes, competitor matching, and production downside.",
+                "5. Score state and channel readiness using policy fit, approval lift, margin gap, and product complexity.",
+                "6. Rank rate-card actions, launch gates, market expansion opportunities, QA risks, and stakeholder follow-ups.",
                 "",
             ]
         )
@@ -416,9 +663,13 @@ def write_analysis(summary):
                 "",
                 "The model is deterministic and synthetic. It is designed to be interview-safe because it does not use private rate cards, dealer contracts, customer credit files, or fund economics.",
                 "",
+                "State-level assumptions use public-market structure as anchors: residential electric-rate ranges, production-yield bands, policy friction, and market maturity. The scenario outputs remain synthetic because actual dealer terms, competitor offers, credit policy, and investor economics are private.",
+                "",
                 "Loan scenarios compute amortizing customer payments from financed amount, APR, dealer fee, and term. Investor cash flows subtract servicing cost and loss reserve, then calculate NPV at funding cost and IRR.",
                 "",
                 "Lease and PPA scenarios model owner cash flows using project cost, tax-credit proxy, SREC or REC value, escalator, service cost, and production degradation. The model calculates monthly payment or price per kWh, NPV, IRR, and margin gap.",
+                "",
+                "Sensitivity tests are directional pricing-review checks. They estimate the margin and NPV effect of funding-cost movement, dealer incentive changes, competitor repricing, and production downside. They are not represented as audited investor cash-flow recalculations.",
                 "",
                 "Priority score increases when margin gap is negative, competitor gap is high, QA defects are open, channel complexity is high, or state readiness is weak.",
                 "",
@@ -485,8 +736,11 @@ def write_docs(scenarios, competitive, qa, actions, summary):
                 "- `competitive_intelligence.csv`: Synthetic competitor pricing, dealer incentive, and proposal win risk records.",
                 "- `platform_qa.csv`: Pricing-platform test results and data-quality checks by workflow area.",
                 "- `stakeholder_actions.csv`: Follow-up queue for pricing review, S&OP, product council, and QA standups.",
+                "- `analysis/outputs/assumption_ledger.csv`: State-level public-market anchors used by the synthetic model.",
+                "- `analysis/outputs/sensitivity_tests.csv`: Directional stress tests for funding cost, dealer fee, competitor matching, and production downside.",
+                "- `analysis/outputs/launch_gate_queue.csv`: New-product launch gates with readiness, margin, QA, and next-step signals.",
                 "",
-                "The generator uses a fixed random seed. Ranges are documented in `analysis/methodology.md` and implemented in `scripts/score_operating_data.py`.",
+                "The generator uses a fixed random seed. Ranges are documented in `analysis/methodology.md` and implemented in `scripts/score_operating_data.py`. Public-market anchors are used only to shape plausible state assumptions. Scenario-level economics are synthetic.",
                 "",
             ]
         )
@@ -506,6 +760,9 @@ def write_docs(scenarios, competitive, qa, actions, summary):
                 "| `analysis/outputs/rate_card_actions.csv` | Scenario | Highest-priority pricing and rate-card moves. |",
                 "| `analysis/outputs/market_expansion_queue.csv` | State | State readiness, average margin, competitor gap, and high-priority count. |",
                 "| `analysis/outputs/qa_readiness_queue.csv` | QA check | Highest-risk pricing-platform QA items. |",
+                "| `analysis/outputs/assumption_ledger.csv` | State | Public-market assumption anchors used to shape synthetic state scenarios. |",
+                "| `analysis/outputs/sensitivity_tests.csv` | Scenario x stress test | Directional pricing stress tests for rate-card review. |",
+                "| `analysis/outputs/launch_gate_queue.csv` | Product launch gate | Product readiness, QA risk, blocker, and next step. |",
                 "",
                 "Key modeled fields:",
                 "",
@@ -516,6 +773,8 @@ def write_docs(scenarios, competitive, qa, actions, summary):
                 "- `competitor_gap_bps`: Positive values indicate the scenario is less competitive than the synthetic market reference.",
                 "- `readiness_score`: Composite state and product readiness score.",
                 "- `priority_score`: Composite score used to rank pricing actions.",
+                "- `decision_signal`: Sensitivity-test result used to flag pass, reprice, or block conditions.",
+                "- `launch_gate`: New-product operating decision area for product council or S&OP review.",
                 "",
             ]
         )
@@ -537,6 +796,9 @@ def write_docs(scenarios, competitive, qa, actions, summary):
         "rateCardActions": summary["rate_card_actions"][:12],
         "qaQueue": summary["qa_readiness_queue"][:12],
         "stakeholderActions": summary["actions"][:10],
+        "assumptionLedger": summary["assumption_rows"],
+        "sensitivityTests": summary["sensitivity_tests"][:12],
+        "launchGates": summary["launch_gates"],
     }
     (SRC_DIR / "data.js").write_text(
         "export const appData = "
@@ -547,13 +809,14 @@ def write_docs(scenarios, competitive, qa, actions, summary):
     readme = [
         "# Solar Finance Pricing Product Lab",
         "",
-        "An interactive portfolio artifact for a residential solar financing pricing and new product team. The lab shows how pricing inputs flow into fund economics, dealer rate cards, competitive intelligence, market expansion decisions, and platform QA follow-up.",
+        "An interactive portfolio artifact for a residential solar financing pricing and new product team. The lab shows how pricing inputs flow into fund economics, dealer rate cards, competitive intelligence, new-product launch gates, market expansion decisions, and platform QA follow-up.",
         "",
         "## What this project demonstrates",
         "",
         "- Excel-style pricing model logic for loan, lease, PPA, and prepaid lease scenarios.",
         "- NPV, IRR, discounted cash-flow, contribution margin, dealer fee, customer payment, and funding-cost calculations.",
         "- Competitive intelligence tracking across states, channels, dealer tiers, and product structures.",
+        "- Sensitivity testing for funding-cost shocks, dealer-fee movement, competitor matching, and production downside.",
         "- New-product and market readiness scoring for operating reviews.",
         "- Pricing-platform QA and stakeholder action queues for S&OP and launch support.",
         "",
@@ -567,17 +830,23 @@ def write_docs(scenarios, competitive, qa, actions, summary):
         "",
         "Scenario model surface with rate-card recommendations, NPV, IRR, margin gap, competitor gap, and monthly payment outputs.",
         "",
+        "![Sensitivity lab](docs/images/sensitivity-lab.png)",
+        "",
+        "Sensitivity lab showing public-market assumption anchors and directional stress tests for pricing review.",
+        "",
         "![Market and QA queue](docs/images/market-qa.png)",
         "",
-        "Market and QA surface showing state expansion readiness, pricing-platform defects, and stakeholder follow-ups.",
+        "Launch and QA surface showing new-product gates, pricing-platform defects, and stakeholder follow-ups.",
         "",
         "## Data",
         "",
-        "All data is synthetic and generated by `scripts/score_operating_data.py` with a fixed random seed. The structure is modeled on common residential solar finance workflows, including dealer rate cards, loan and third-party-owned economics, competitor offer tracking, state expansion research, platform QA, and operating review follow-ups.",
+        "The scenario-level data is synthetic and generated by `scripts/score_operating_data.py` with a fixed random seed. The structure is modeled on common residential solar finance workflows, including dealer rate cards, loan and third-party-owned economics, competitor offer tracking, state expansion research, platform QA, and operating review follow-ups.",
+        "",
+        "Public-market anchors shape the state assumption ledger: residential electric-rate ranges, PV production-yield bands, policy friction, and market maturity. These anchors are used only to make the synthetic model plausible. The project does not claim to represent real company performance, live dealer pricing, private investor economics, or actual competitor terms.",
         "",
         "The synthetic generator creates scenarios across eight states, four dealer channels, five product structures, three credit bands, and three dealer tiers. It assigns project cost per watt, system size, production yield, dealer fee, funding cost, loss reserve, servicing cost, APR or escalator, tax-credit proxy, REC value, competitor offer, approval lift, and QA defects.",
         "",
-        "Loan scenarios use amortizing payment logic. Lease and PPA scenarios use owner cash flows with production, escalator, service cost, incentive value, and degradation assumptions. The model then calculates NPV, IRR, contribution margin, margin gap, competitiveness gap, readiness score, and priority score.",
+        "Loan scenarios use amortizing payment logic. Lease and PPA scenarios use owner cash flows with production, escalator, service cost, incentive value, and degradation assumptions. The model then calculates NPV, IRR, contribution margin, margin gap, competitiveness gap, readiness score, priority score, sensitivity-test signal, and launch-gate status.",
         "",
         "## Repository guide",
         "",
@@ -588,11 +857,14 @@ def write_docs(scenarios, competitive, qa, actions, summary):
         "- `analysis/outputs/rate_card_actions.csv`: Ranked pricing and rate-card recommendations.",
         "- `analysis/outputs/market_expansion_queue.csv`: State readiness summary.",
         "- `analysis/outputs/qa_readiness_queue.csv`: Highest-risk QA items.",
+        "- `analysis/outputs/assumption_ledger.csv`: State-level public-market anchors used by the model.",
+        "- `analysis/outputs/sensitivity_tests.csv`: Directional stress tests for pricing model review.",
+        "- `analysis/outputs/launch_gate_queue.csv`: New-product launch gate summary.",
         "- `src/app.js` and `src/data.js`: Interactive static workbench.",
         "",
         "## Role connection",
         "",
-        "This artifact is designed for a pricing development and new product role in residential solar finance. It demonstrates the core work called for in the role: maintaining pricing model logic, explaining how inputs affect fund economics and dealer rate cards, organizing competitive intelligence, supporting market and product research, preparing operating-review materials, and documenting platform QA issues.",
+        "This artifact is designed for a pricing development and new product role in residential solar finance. It demonstrates the core work called for in the role: maintaining pricing model logic, explaining how inputs affect fund economics and dealer rate cards, organizing competitive intelligence, supporting market and product research, preparing operating-review materials, stress-testing assumptions, and documenting platform QA issues.",
         "",
         "## Run locally",
         "",
@@ -605,7 +877,7 @@ def write_docs(scenarios, competitive, qa, actions, summary):
         "",
         "## Scope",
         "",
-        "This is a public portfolio artifact, not a production pricing system. It does not use real customer data, private dealer terms, live rate cards, credit policy, investor documents, or company performance data. It does show a defensible workflow for connecting pricing assumptions, finance outputs, market intelligence, product readiness, and QA follow-up into one decision artifact.",
+        "This is a public portfolio artifact, not a production pricing system. It does not use real customer data, private dealer terms, live rate cards, credit policy, investor documents, or company performance data. Sensitivity tests are directional review tools, not audited investor cash-flow recalculations. The project does show a defensible workflow for connecting pricing assumptions, finance outputs, market intelligence, product readiness, and QA follow-up into one decision artifact.",
         "",
     ]
     (ROOT / "README.md").write_text("\n".join(readme))
@@ -618,7 +890,7 @@ def write_docs(scenarios, competitive, qa, actions, summary):
                 "- Status: upgraded through the Portfolio Artifact Upgrade Workflow.",
                 "- Artifact type: residential solar finance pricing and product workbench.",
                 "- Data: deterministic synthetic scenario model with documented assumptions.",
-                "- Verification: regenerate data with `npm run analyze`, serve with `npm start`, and inspect the three README screenshots.",
+                "- Verification: regenerate data with `npm run analyze`, serve with `npm start`, and inspect the README screenshots.",
                 "",
             ]
         )

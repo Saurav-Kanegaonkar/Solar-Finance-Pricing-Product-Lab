@@ -9,6 +9,9 @@
 | `analysis/outputs/rate_card_actions.csv` | Scenario | Highest-priority pricing and rate-card moves. |
 | `analysis/outputs/market_expansion_queue.csv` | State | State readiness, average margin, competitor gap, and high-priority count. |
 | `analysis/outputs/qa_readiness_queue.csv` | QA check | Highest-risk pricing-platform QA items. |
+| `analysis/outputs/assumption_ledger.csv` | State | Public-market assumption anchors used to shape synthetic state scenarios. |
+| `analysis/outputs/sensitivity_tests.csv` | Scenario x stress test | Directional pricing stress tests for rate-card review. |
+| `analysis/outputs/launch_gate_queue.csv` | Product launch gate | Product readiness, QA risk, blocker, and next step. |
 
 Key modeled fields:
 
@@ -19,3 +22,5 @@ Key modeled fields:
 - `competitor_gap_bps`: Positive values indicate the scenario is less competitive than the synthetic market reference.
 - `readiness_score`: Composite state and product readiness score.
 - `priority_score`: Composite score used to rank pricing actions.
+- `decision_signal`: Sensitivity-test result used to flag pass, reprice, or block conditions.
+- `launch_gate`: New-product operating decision area for product council or S&OP review.

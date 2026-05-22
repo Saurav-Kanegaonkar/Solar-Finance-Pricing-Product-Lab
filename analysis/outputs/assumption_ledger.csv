@@ -1,0 +1,9 @@
+state,region,residential_rate_cents_kwh,annual_yield_kwh_per_kw,policy_score,export_rule_friction,model_use
+CA,West,32.0,1510,88,16,"High residential electric rates, NEM 3.0 export-value pressure, strong solar adoption."
+AZ,West,15.0,1705,73,9,High production yield with moderate residential rates and utility-specific export rules.
+TX,South,15.0,1515,66,8,"Large installer market, competitive retail power context, and uneven local incentives."
+FL,South,15.0,1490,69,7,"High household load and solid production, with affordability-sensitive savings cases."
+NJ,Northeast,20.0,1260,81,5,"Higher residential rates, REC-style value streams, and mature solar finance competition."
+NY,Northeast,26.0,1190,77,6,"High residential rates, lower production yield, and heavier market-by-utility variation."
+CO,Mountain,15.0,1500,75,6,Moderate residential rates with strong solar resource and storage attach potential.
+NV,West,15.0,1730,71,10,"Very strong production yield, moderate rates, and export-rule sensitivity."
